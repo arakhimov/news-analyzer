@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сервис для анализа происходящих в мире событий">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
+    <meta name="author" content="Артем Рахимов">
+    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="icon" href="./images/favicon.png">
+    <title>News Analyzer</title>
+  </head>
+  <body>
+    <div class="root">
+      <!-- секция search -->
+      <section class="search">
+        <!-- контейнер для всех элементов кроме picture с абсолютным позиционированием -->
+        <div class="search__wrapper">
+          <!-- секция header -->
+          <header class="header header_theme_white">
+            <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
+            <div class="header__wrapper content__wrapper">
+              <a href="./analytics.html" lang="en" class="header__link header__link_page_news-analyzer header__link_theme_white">NewsAnalyzer</a>
+              <ul class="header__nav">
+                <li class="header__nav-item header__nav-item_theme_white">
+                  <a href="./index.html" class="header__link header__link_page_main header__link_theme_white">Главная</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="./about.html" class="header__link header__link_page_main">О проекте</a>
+                </li>
+              </ul>
+            </div>
+          </header>
+          <!-- конец header -->
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__explanation-text">Введите в поиске любую тему и узнайте, насколько популярной она была во многих новостях
+            за прошедшую неделю.
+          </p>
+          <!-- контейнер для выравнивания input и button относительно друг друга -->
+          <div class="search__field">
+            <input type="text" class="search__input" placeholder="Введите тему новости" required>
+            <button type="submit" class="search__button"></button>
+          </div>
+        </div>
+        <picture class="search__picture">
+          <source class="search__image" media="(max-width: 575px)"
+            srcset="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-320.png">
+          <source class="search__image" media="(min-width: 1024px)"
+            srcset="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png">
+          <img class="search__image" src="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png" alt="anylytics">
+        </picture>
+      </section>
+
+      <!-- секция автор -->
+      <section class="author content__wrapper">
+        <div class="author__image-wrapper">
+          <div class="author__photo"></div>
+        </div>
+        <div class="author__column">
+          <h2 class="content__title">Об авторе</h2>
+          <p class="content__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, 
+            чем вы занимаетесь, какими технологиями разработки владеете.
+          </p>
+          <p class="content__paragraph">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, 
+            и чем можете помочь потенциальным заказчикам.
+          </p>
+        </div>
+      </section>
+
+      <!--секция footer -->
+      <footer class="footer content__wrapper">
+        <span class="footer__copyright">&copy;2019&emsp;Supersite</span>
+        <nav class="footer__nav">
+          <a href="./index.html" class="footer__nav-item footer__nav-item_type_pages">Главная</a>
+          <a href="./about.html" class="footer__nav-item footer__nav-item_type_pages">О проекте</a>
+          <a href="https://praktikum.yandex.ru/" class="footer__nav-item footer__nav-item_type_pages">Яндекс.Практикум</a>
+        </nav>
+        <div class="footer__social">
+          <a href="./index.html" class="footer__nav-item footer__nav-item_type_icon">
+            <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
+          </a>
+          <a href="./about.html" class="footer__nav-item footer__nav-item_type_icon">
+            <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
