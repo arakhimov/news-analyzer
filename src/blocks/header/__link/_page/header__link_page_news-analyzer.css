@@ -1,0 +1,15 @@
+.header__link_page_news-analyzer {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    /* color: #fff; */
+}
+
+@media screen and (max-width: 425px) {
+    .header__link_page_news-analyzer {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}

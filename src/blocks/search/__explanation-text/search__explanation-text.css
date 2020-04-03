@@ -1,0 +1,51 @@
+.search__explanation-text {
+  width: 44%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4%;
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+@media screen and (max-width: 424px) {
+  .search__explanation-text {
+    width: calc(100% - 32px);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 574px) {
+  .search__explanation-text {
+    width: calc(100% - 80px);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 10%;
+  }
+}
+
+@media screen and (min-width: 575px) and (max-width: 767px) {
+  .search__explanation-text {
+    width: calc(100% - 160px);
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .search__explanation-text {
+    width: 60%;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .search__explanation-text {
+    width: 60%;
+    margin-bottom: 3%;
+  }
+}

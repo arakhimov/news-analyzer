@@ -1,0 +1,16 @@
+@import url('./__column/authot__column.css');
+@import url('./__image-wrapper/author__image-wrapper.css');
+@import url('./__photo/author__photo.css');
+
+.author {
+  display: flex;
+  background-color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 575px) {
+  .author {
+    flex-wrap: wrap;
+  }
+}

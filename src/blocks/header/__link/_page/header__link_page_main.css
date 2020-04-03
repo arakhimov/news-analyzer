@@ -1,0 +1,15 @@
+.header__link_page_main {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #b6bcbf;
+}
+
+@media screen and (max-width: 425px) {
+  .header__link_page_main {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,8 @@
+@import url('./_page/header__link_page_main.css');
+@import url('./_page/header__link_page_news-analyzer.css');
+@import url('./_theme/header__link_theme_white.css');
+@import url('./_theme/header__link_theme_dark.css');
+
+.header__link {
+  text-decoration: none;
+}

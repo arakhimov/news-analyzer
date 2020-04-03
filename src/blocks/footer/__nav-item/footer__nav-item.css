@@ -1,0 +1,7 @@
+@import url('./_type/footer__nav-item_type_pages.css');
+@import url('./_type/footer__nav-item_type_icon.css');
+
+.footer__nav-item:link, .footer__nav-item:visited {
+  color: #1a1b22;
+  text-decoration: none;
+}

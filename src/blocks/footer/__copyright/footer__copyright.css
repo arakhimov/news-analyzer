@@ -1,0 +1,14 @@
+.footer__copyright {
+  color: #b6bcbf;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.375;
+}
+
+@media screen and (max-width: 675px) {
+  .footer__copyright {
+    order: 1;
+  }
+}

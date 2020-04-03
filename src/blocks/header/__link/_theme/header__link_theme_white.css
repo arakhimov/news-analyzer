@@ -1,0 +1,6 @@
+.header__link_page_main.header__link_theme_white:link, 
+.header__link_page_main.header__link_theme_white:visited,
+.header__link_page_news-analyzer.header__link_theme_white:link, 
+.header__link_page_news-analyzer.header__link_theme_white:visited {
+  color: #fff;
+}

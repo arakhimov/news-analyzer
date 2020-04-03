@@ -1,0 +1,16 @@
+.technologies__card-wrapper {
+  width: calc(100% - 344px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 93px;
+}
+
+@media screen and (max-width: 768px) {
+  .technologies__card-wrapper {
+    flex-wrap: wrap;
+    padding-top: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
