@@ -1,0 +1,6 @@
+.content__link.content__link_theme_dark:link, 
+.content__link.content__link_theme_dark:visited,
+.content__link_page_news-analyzer.content__link_theme_dark:link, 
+.content__link_page_news-analyzer.content__link_theme_dark:visited {
+  color: #000;
+}

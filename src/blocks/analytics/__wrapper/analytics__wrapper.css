@@ -1,0 +1,10 @@
+.analytics__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "month  amount"
+    ".      scale-up"
+    "days    range"
+    ".      scale-down";
+}

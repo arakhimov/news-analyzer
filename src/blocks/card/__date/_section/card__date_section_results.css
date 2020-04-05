@@ -1,0 +1,12 @@
+.card__date_section_results {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 575px) {
+  .card__date_section_results {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,9 @@
+@import url('./_section/card__date_section_results.css');
+@import url('./_section/card__date_section_github.css');
+
+.card__date {
+  color: #b6bcbf;
+  font-style: normal;
+  font-weight: normal;
+  /* border: 1px solid red; */
+}

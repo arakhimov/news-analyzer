@@ -1,0 +1,19 @@
+@import url('./__date/card__date.css');
+@import url('./__image/card__image.css');
+@import url('./__source/card__source.css');
+@import url('./__text/card__text.css');
+@import url('./__title/card__title.css');
+@import url('./__text-accent/card__text-accent.css');
+@import url('./__email/card__email.css');
+@import url('./__wrapper/card__wrapper.css');
+@import url('./_section/card_section_results.css');
+@import url('./_section/card_section_github.css');
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  border-radius: 3%;
+  background-color: #fff;
+  overflow: hidden;
+}

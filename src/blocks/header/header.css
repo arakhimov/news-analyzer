@@ -1,6 +1,4 @@
-@import url('./__link/header__link.css');
 @import url('./__nav/header__nav.css');
-@import url('./__wrapper/header__wrapper.css');
 @import url('./__nav-item/header__nav-item.css');
 @import url('./_theme/header_theme_white.css');
 @import url('./_theme/header_theme_dark.css');
@@ -8,25 +6,18 @@
 .header {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5%;
+  min-height: 80px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 575px) {
   .header {
-    margin-bottom: 9%;
+    min-height: 56px;
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 575px) {
+@media screen and (min-width: 576px) and (max-width: 1024px) {
   .header {
-    margin-bottom: 12%;
-  }
-}
-
-
-@media screen and (min-width: 1024px) and (max-width: 1399px) {
-  .header {
-    margin-bottom: 4%;
+    min-height: 64px;
   }
 }
 

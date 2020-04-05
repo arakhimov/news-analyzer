@@ -1,0 +1,9 @@
+.card__email {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: .875rem;
+  line-height: 1.55;
+  color: #1a1b22;
+  margin: 0;
+}

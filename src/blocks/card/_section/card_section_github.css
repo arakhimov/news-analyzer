@@ -1,0 +1,9 @@
+.card_section_github {
+  padding: 24px;
+}
+
+@media screen and (max-width: 425px) {
+  .card_section_github {
+    padding: 16px;
+  }
+}

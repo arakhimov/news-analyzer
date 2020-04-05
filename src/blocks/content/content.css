@@ -1,3 +1,7 @@
 @import url('./__wrapper/content__wrapper.css');
 @import url('./__title/content__title.css');
-@import url('./__pharagraph/content__paragraph.css');
+@import url('./__paharagraph/content__paragraph.css');
+@import url('./__header/content__header.css');
+@import url('./__link/content__link.css');
+@import url('./__icon-more/content__icon-more.css');
+@import url('./__button/content__button.css');

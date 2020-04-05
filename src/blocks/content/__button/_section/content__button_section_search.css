@@ -1,0 +1,24 @@
+.content__button_section_search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 168px;
+  color: #fff;
+  background-color: #2f71e5;
+}
+
+@media screen and (max-width: 575px) {
+  .content__button_section_search {
+    width: 100%;
+    position: static;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .content__button_section_search {
+    width: 160px;
+  }
+}

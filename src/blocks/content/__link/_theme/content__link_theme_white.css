@@ -1,0 +1,6 @@
+.content__link.content__link_theme_white:link, 
+.content__link.content__link_theme_white:visited,
+.content__link_page_news-analyzer.content__link_theme_white:link, 
+.content__link_page_news-analyzer.content__link_theme_white:visited {
+  color: #fff;
+}

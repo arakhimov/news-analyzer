@@ -1,0 +1,27 @@
+@import url('./_section/content__button_section_search.css');
+@import url('./_section/content__button_section_results.css');
+
+.content__button {
+  height: 64px;
+  border-radius: 80px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.375;
+  border: 0;
+}
+
+@media screen and (max-width: 575px) {
+  .content__button {
+    height: 56px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .content__button {
+    height: 56px;
+  }
+}

@@ -1,0 +1,17 @@
+@import url('./_section/card__title_section_github.css');
+@import url('./_section/card__title_section_results.css');
+
+.card__title {
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #1a1b22;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .card__title {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+}

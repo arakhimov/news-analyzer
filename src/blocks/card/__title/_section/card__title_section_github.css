@@ -1,0 +1,12 @@
+.card__title_section_github {
+  width: 70%;
+  font-size: 1.625rem;
+  line-height: .95;
+}
+
+@media screen and (max-width: 768px) {
+  .card__title_section_github {
+    font-size: 1.25rem;
+    line-height: .95;
+  }
+}

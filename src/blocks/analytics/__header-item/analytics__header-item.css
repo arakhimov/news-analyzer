@@ -1,0 +1,27 @@
+.analytics__header-item {
+  min-height: 20px;
+  padding-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: .75;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: #b6bcbf;
+  border-bottom: 1px solid #1a1b22;
+}
+
+.analytics__header-item:first-of-type {
+  grid-area: month;
+}
+
+.analytics__header-item:nth-of-type(2) {
+  grid-area: amount;
+}
+
+@media screen and (max-width: 575px) {
+  .analytics__header-item {
+    margin-bottom: 18px;
+  }
+}

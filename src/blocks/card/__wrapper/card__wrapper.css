@@ -1,0 +1,6 @@
+@import url('./_section/card__wrapper_section_results.css');
+@import url('./_section/card__wrapper_section_github.css');
+
+.card__wrapper {
+  display: flex;
+}

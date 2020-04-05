@@ -1,0 +1,13 @@
+.card__image_section_github {
+  width: 64px;
+  height: 64px;
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .card__image_section_github {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+  }
+}

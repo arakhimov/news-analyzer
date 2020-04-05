@@ -1,0 +1,21 @@
+.request-answer__subtitle {
+  margin-bottom: 80px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125;
+  line-height: 1.35;
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 425px) {
+  .request-answer__subtitle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 1024px) {
+  .request-answer__subtitle {
+    margin-bottom: 64px;
+  }
+}

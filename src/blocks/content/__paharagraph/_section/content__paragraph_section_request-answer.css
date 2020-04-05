@@ -1,0 +1,3 @@
+.content__paragraph.content__paragraph_section_request-answer:not(:last-of-type) {
+  margin-bottom: 4px;
+}

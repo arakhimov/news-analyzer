@@ -1,0 +1,22 @@
+@import url('./__slider/github__slider.css');
+
+.github {
+  background-color: #f5f6f7;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 575px) {
+  .github {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .github {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

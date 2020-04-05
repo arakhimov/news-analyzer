@@ -1,19 +1,22 @@
 @media screen and (max-width: 575px) {
   .for-customers {
     margin-bottom: 5%;
+    padding-top: 5%;
   }
 }
 
 @media screen and(min-width: 576px) and (max-width: 1280px) {
   .for-customers {
     margin-bottom: 3.5%;
+    padding-top: 10%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .for-customers {
     width: 57%;
-    margin: 7.5%;
+    margin-left: 7.5%;
     margin-bottom: 6.5%;
+    padding-top: 4%;
   }
 }
