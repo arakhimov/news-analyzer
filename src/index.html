@@ -19,14 +19,14 @@
           <!-- секция header -->
           <header class="header header_theme_white">
             <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
-            <div class="header__wrapper content__wrapper">
-              <a href="./analytics.html" lang="en" class="header__link header__link_page_news-analyzer header__link_theme_white">NewsAnalyzer</a>
+            <div class="content__header content__wrapper">
+              <a href="./analytics.html" lang="en" class="content__link content__link_page_news-analyzer content__link_theme_white">NewsAnalyzer</a>
               <ul class="header__nav">
                 <li class="header__nav-item header__nav-item_theme_white">
-                  <a href="./index.html" class="header__link header__link_page_main header__link_theme_white">Главная</a>
+                  <a href="./index.html" class="content__link content__link_page_main content__link_theme_white">Главная</a>
                 </li>
                 <li class="header__nav-item">
-                  <a href="./about.html" class="header__link header__link_page_main">О проекте</a>
+                  <a href="./about.html" class="content__link content__link_page_main">О проекте</a>
                 </li>
               </ul>
             </div>
@@ -39,7 +39,7 @@
           <!-- контейнер для выравнивания input и button относительно друг друга -->
           <div class="search__field">
             <input type="text" class="search__input" placeholder="Введите тему новости" required>
-            <button type="submit" class="search__button"></button>
+            <button type="submit" class="content__button content__button_section_search">Искать</button>
           </div>
         </div>
         <picture class="search__picture">
@@ -49,6 +49,89 @@
             srcset="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png">
           <img class="search__image" src="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png" alt="anylytics">
         </picture>
+      </section>
+
+      <!-- секция results -->
+      <section class="results">
+        <div class="content__header content__wrapper">
+          <h2 class="content__title">Результаты поиска</h2>
+          <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;<img src="./images/more-icon.png" alt="" class="content__icon-more"> </a>
+        </div>
+        <div class="results__cardlist content__wrapper">
+          <!-- первая карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results1.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">ЛЕНТА.РУ</span>
+            </div>
+          </div>
+          <!-- вторая карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results2.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">медуза</span>
+            </div>
+          </div>
+          <!-- третья карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results3.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">риа</span>
+            </div>
+          </div>
+          <!-- четвертая карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results4.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">дзен</span>
+            </div>
+          </div>
+          <!-- пятая карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results5.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">афиша</span>
+            </div>
+          </div>
+          <!-- шестая карточка -->
+          <div class="card card_section_results">
+            <img src="./images/results6.png" alt="" class="card__image card__image_section_results">
+            <div class="card__wrapper card__wrapper_section_results">
+              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
+                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+              <span class="card__source">медиазона</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="content__button content__button_section_results">Показать еще</button>
       </section>
 
       <!-- секция автор -->
@@ -69,17 +152,17 @@
 
       <!--секция footer -->
       <footer class="footer content__wrapper">
-        <span class="footer__copyright">&copy;2019&emsp;Supersite</span>
+        <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
         <nav class="footer__nav">
           <a href="./index.html" class="footer__nav-item footer__nav-item_type_pages">Главная</a>
           <a href="./about.html" class="footer__nav-item footer__nav-item_type_pages">О проекте</a>
           <a href="https://praktikum.yandex.ru/" class="footer__nav-item footer__nav-item_type_pages">Яндекс.Практикум</a>
         </nav>
         <div class="footer__social">
-          <a href="./index.html" class="footer__nav-item footer__nav-item_type_icon">
+          <a href="https://github.com/" class="footer__nav-item footer__nav-item_type_icon">
             <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
           </a>
-          <a href="./about.html" class="footer__nav-item footer__nav-item_type_icon">
+          <a href="https://www.facebook.com/" class="footer__nav-item footer__nav-item_type_icon">
             <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
           </a>
         </div>

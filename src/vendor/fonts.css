@@ -1,3 +1,4 @@
+/* Roboto */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -11,6 +12,13 @@
   src: url('./fonts/roboto-regular.woff') format('woff');
 }
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./fonts/roboto-bold.woff');
+}
+/* Roboto Slab */
+@font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: normal;
@@ -22,6 +30,7 @@
   font-weight: bold;
   src: url('./fonts/robotoslab-bold.woff') format('woff');
 }
+/* Source Sans Pro */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;

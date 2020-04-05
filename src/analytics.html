@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сервис для анализа происходящих в мире событий">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
+    <meta name="author" content="Артем Рахимов">
+    <link rel="stylesheet" href="./pages/analytics.css">
+    <link rel="icon" href="./images/favicon.png">
+    <title>News Analyzer</title>
+  </head>
+  <body>
+    <div class="root">
+      <!-- секция header -->
+      <header class="header header_theme_dark">
+        <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
+        <div class="content__header content__wrapper">
+          <a href="./analytics.html" lang="en" class="content__link content__link_page_news-analyzer content__link_theme_dark">NewsAnalyzer</a>
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <a href="./index.html" class="content__link content__link_page_main">Главная</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="./about.html" class="content__link content__link_page_main">О проекте</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <!-- конец header -->
+
+      <!-- секция request-answer -->
+      <section class="request-answer">
+        <h3 class="request-answer__subtitle content__wrapper">Главная / Аналитика</h3>
+        <h2 class="content__title content__wrapper">Вы спросили: &laquo;Путешествия&raquo;</h2>
+        <p class="content__paragraph content__paragraph_section_request-answer content__wrapper">Новостей за неделю: 
+          <span class="content__paragraph content__paragraph_accent">34 324</span>
+        </p>
+        <p class="content__paragraph content__paragraph_section_request-answer content__wrapper">Упоминаний в заголовках: 
+          <span class="content__paragraph content__paragraph_accent">235</span>
+        </p>
+      </section>
+
+      <!-- секция analytics -->
+      <section class="analytics">
+        <h2 class="content__title content__title_section_analytics content__wrapper">Аналитика по дням</h2>
+        <div class="analytics__wrapper content__wrapper">
+          <!-- заголовок -->
+          <time class="analytics__header-item">дата (август)</time>
+          <time class="analytics__header-item">кол-во упоминаний</time>
+          <!-- шкала -->
+          <div class="analytics__scale">
+            <span class="analytics__scale-item">0</span>
+            <span class="analytics__scale-item">25</span>
+            <span class="analytics__scale-item">50</span>
+            <span class="analytics__scale-item">75</span>
+            <span class="analytics__scale-item">100</span>
+          </div>
+          <div class="analytics__day-wrapper">
+            <!-- понедельник -->
+            <time class="analytics__day">19,пн</time>
+            <!-- вторник -->
+            <time class="analytics__day">20,вт</time>
+            <!-- среда -->
+            <time class="analytics__day">21,ср</time>
+            <!-- четверг -->
+            <time class="analytics__day">22,чт</time>
+            <!-- пятница -->
+            <time class="analytics__day">23,пт</time>
+            <!-- суббота -->
+            <time class="analytics__day">24,сб</time>
+            <!-- воскресенье -->
+            <time class="analytics__day">25,вс</time>
+          </div>
+          <div class="analytics__range-wrapper">
+            <!-- понедельник -->
+            <span class="analytics__range">15</span>
+            <!-- вторник -->
+            <span class="analytics__range">18</span>
+            <!-- среда -->
+            <span class="analytics__range">11</span>
+            <!-- четверг -->
+            <span class="analytics__range">39</span>
+            <!-- пятница -->
+            <span class="analytics__range">45</span>
+            <!-- суббота -->
+            <span class="analytics__range">73</span>
+            <!-- воскресенье -->
+            <span class="analytics__range">34</span>
+          </div>
+          <!-- шкала -->
+          <div class="analytics__scale">
+            <span class="analytics__scale-item">0</span>
+            <span class="analytics__scale-item">25</span>
+            <span class="analytics__scale-item">50</span>
+            <span class="analytics__scale-item">75</span>
+            <span class="analytics__scale-item">100</span>
+          </div>
+        </div>
+      </section>
+      
+      <!--секция footer -->
+      <footer class="footer content__wrapper">
+        <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
+        <nav class="footer__nav">
+          <a href="./index.html" class="footer__nav-item footer__nav-item_type_pages">Главная</a>
+          <a href="./about.html" class="footer__nav-item footer__nav-item_type_pages">О проекте</a>
+          <a href="https://praktikum.yandex.ru/" class="footer__nav-item footer__nav-item_type_pages">Яндекс.Практикум</a>
+        </nav>
+        <div class="footer__social">
+          <a href="./index.html" class="footer__nav-item footer__nav-item_type_icon">
+            <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
+          </a>
+          <a href="./about.html" class="footer__nav-item footer__nav-item_type_icon">
+            <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
+          </a>
+        </div>
+      </footer>
+    </dic>
+  </body>
+</html>
