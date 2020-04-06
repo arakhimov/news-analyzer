@@ -4,8 +4,7 @@
   margin-right: 56px;
 }
 
-/* для разрешений до 575px */
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 575px) {
   .author__image-wrapper {
     width: 100%;
     margin-left: auto;
@@ -13,7 +12,7 @@
     margin-right: 32px;
   }
 }
-@media screen and (min-width: 575px) and (max-width: 768px) {
+@media screen and (min-width: 574px) and (max-width: 768px) {
   .author__image-wrapper {
     margin-right: 32px;
   }

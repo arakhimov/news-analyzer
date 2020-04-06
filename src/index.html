@@ -6,19 +6,17 @@
     <meta name="description" content="Сервис для анализа происходящих в мире событий">
     <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
     <meta name="author" content="Артем Рахимов">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link rel="icon" href="<%=require('./images/favicon.png').default%>">
     <title>News Analyzer</title>
   </head>
   <body>
     <div class="root">
       <!-- секция search -->
       <section class="search">
-        <!-- контейнер для всех элементов кроме picture с абсолютным позиционированием -->
         <div class="search__wrapper">
           <!-- секция header -->
           <header class="header header_theme_white">
-            <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
             <div class="content__header content__wrapper">
               <a href="./analytics.html" lang="en" class="content__link content__link_page_news-analyzer content__link_theme_white">NewsAnalyzer</a>
               <ul class="header__nav">
@@ -36,7 +34,6 @@
           <p class="search__explanation-text">Введите в поиске любую тему и узнайте, насколько популярной она была во многих новостях
             за прошедшую неделю.
           </p>
-          <!-- контейнер для выравнивания input и button относительно друг друга -->
           <div class="search__field">
             <input type="text" class="search__input" placeholder="Введите тему новости" required>
             <button type="submit" class="content__button content__button_section_search">Искать</button>
@@ -44,10 +41,10 @@
         </div>
         <picture class="search__picture">
           <source class="search__image" media="(max-width: 575px)"
-            srcset="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-320.png">
+            srcset="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-320.png').default%>">
           <source class="search__image" media="(min-width: 1024px)"
-            srcset="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png">
-          <img class="search__image" src="./images/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png" alt="anylytics">
+            srcset="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png').default%>">
+          <img class="search__image" src="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png').default%>" alt="anylytics">
         </picture>
       </section>
 
@@ -55,12 +52,14 @@
       <section class="results">
         <div class="content__header content__wrapper">
           <h2 class="content__title">Результаты поиска</h2>
-          <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;<img src="./images/more-icon.png" alt="" class="content__icon-more"> </a>
+          <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;
+            <img src="<%=require('./images/more-icon.png').default%>" alt="" class="content__icon-more">
+          </a>
         </div>
         <div class="results__cardlist content__wrapper">
           <!-- первая карточка -->
           <div class="card card_section_results">
-            <img src="./images/results1.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results1.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -72,7 +71,7 @@
           </div>
           <!-- вторая карточка -->
           <div class="card card_section_results">
-            <img src="./images/results2.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results2.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -84,7 +83,7 @@
           </div>
           <!-- третья карточка -->
           <div class="card card_section_results">
-            <img src="./images/results3.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results3.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -96,7 +95,7 @@
           </div>
           <!-- четвертая карточка -->
           <div class="card card_section_results">
-            <img src="./images/results4.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results4.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -108,7 +107,7 @@
           </div>
           <!-- пятая карточка -->
           <div class="card card_section_results">
-            <img src="./images/results5.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results5.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -120,7 +119,7 @@
           </div>
           <!-- шестая карточка -->
           <div class="card card_section_results">
-            <img src="./images/results6.png" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/results6.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -160,13 +159,16 @@
         </nav>
         <div class="footer__social">
           <a href="https://github.com/" class="footer__nav-item footer__nav-item_type_icon">
-            <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
+            <img src="<%=require('./images/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
           </a>
           <a href="https://www.facebook.com/" class="footer__nav-item footer__nav-item_type_icon">
-            <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
+            <img src="<%=require('./images/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
           </a>
         </div>
       </footer>
     </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
   </body>
 </html>
