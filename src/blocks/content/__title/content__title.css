@@ -1,5 +1,5 @@
 @import url('./_section/content__title_section_technologies.css');
-@import url('./_section/content__title_section_analytics.css');
+@import url('./_section/content__title_section_request-anwer.css');
 
 .content__title {
   font-family: 'Roboto Slab', serif;
@@ -15,7 +15,7 @@
 @media screen and (max-width: 1024px) {
   .content__title {
     margin-bottom: 16px;
-    font-size: 1.875rem;
+    font-size: 2rem;
     line-height: 1.35;
   }
 }

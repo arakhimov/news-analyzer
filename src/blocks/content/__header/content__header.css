@@ -1,3 +1,5 @@
+@import url('./_section/content__header_section_results.css');
+
 .content__header {
   display: flex;
   justify-content: space-between;

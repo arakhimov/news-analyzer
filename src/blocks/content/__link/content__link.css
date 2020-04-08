@@ -1,6 +1,7 @@
 @import url('./_page/content__link_page_news-analyzer.css');
 @import url('./_theme/content__link_theme_white.css');
 @import url('./_theme/content__link_theme_dark.css');
+@import url('./_section/content__link_section_request_answer.css');
 
 .content__link {
   text-decoration: none;
