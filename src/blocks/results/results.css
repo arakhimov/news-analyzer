@@ -1,5 +1,6 @@
 @import url('./__cardlist/results__cardlist.css');
 @import url('./_active/results_active.css');
+@import url('./__button/results__button.css');
 
 .results {
   display: none;

@@ -14,11 +14,11 @@
     <div class="root">
       <!-- секция search -->
       <section class="search">
-        <div class="search__wrapper">
-          <!-- секция header -->
-          <header class="header header_theme_white">
+        <div class="search__absolute-container">
+          <!-- header -->
+          <header class="header header_theme_white search__header">
             <div class="content__header content__wrapper">
-              <a href="./analytics.html" lang="en" class="content__link content__link_page_news-analyzer content__link_theme_white">NewsAnalyzer</a>
+              <a href="./index.html" lang="en" class="content__link content__link_news-analyzer content__link_theme_white">NewsAnalyzer</a>
               <ul class="header__nav">
                 <li class="header__nav-item header__nav-item_theme_white">
                   <a href="./index.html" class="content__link content__link_page_main content__link_theme_white">Главная</a>
@@ -30,13 +30,16 @@
             </div>
           </header>
           <!-- конец header -->
-          <h1 class="search__title">Что в мире творится?</h1>
-          <p class="search__explanation-text">Введите в поиске любую тему и узнайте, насколько популярной она была во многих новостях
-            за прошедшую неделю.
-          </p>
-          <div class="search__field">
-            <input type="text" class="search__input" placeholder="Введите тему новости" required>
-            <button type="submit" class="content__button content__button_section_search">Искать</button>
+          <div class="search__wrapper">
+            <h1 class="search__title">Что в мире творится?</h1>
+            <p class="search__subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была во многих новостях
+              за прошедшую неделю.
+            </p>
+            <form class="search__form">
+              <input type="text" name="newsText" class="search__input" placeholder="Введите тему новости" required>
+              <p class="search__explanation-text"></p>
+              <button type="submit" class="content__button search__button">Искать</button>
+            </form>
           </div>
         </div>
         <picture class="search__picture">
@@ -48,9 +51,22 @@
         </picture>
       </section>
 
+      <!-- секция loading -->
+      <section class="loading loading_active">
+        <i class="loading__circle-preloader"></i>
+        <h2 class="content__explanation-text">Идет поиск новостей...</h2>
+      </section>
+
+      <!-- секция not-found -->
+      <section class="not-found not-found_active">
+        <img src="<%=require('./images/not-found_v1.png').default%>" alt="icon not found" class="not-found__image">
+        <h2 class="content__subtitle">Ничего не найдено</h2>
+        <p class="content__explanation-text content__explanation-text_section_not-found">К сожалению по вашему запросу ничего не найдено.</p>
+      </section>
+
       <!-- секция results -->
-      <section class="results">
-        <div class="content__header content__wrapper">
+      <section class="results results_active">
+        <div class="content__header content__header_section_results content__wrapper">
           <h2 class="content__title">Результаты поиска</h2>
           <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;
             <img src="<%=require('./images/more-icon.png').default%>" alt="" class="content__icon-more">
@@ -58,10 +74,10 @@
         </div>
         <div class="results__cardlist content__wrapper">
           <!-- первая карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results1.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -70,10 +86,10 @@
             </div>
           </div>
           <!-- вторая карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results2.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -82,10 +98,10 @@
             </div>
           </div>
           <!-- третья карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results3.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -94,10 +110,10 @@
             </div>
           </div>
           <!-- четвертая карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results4.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -106,10 +122,10 @@
             </div>
           </div>
           <!-- пятая карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results5.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -118,10 +134,10 @@
             </div>
           </div>
           <!-- шестая карточка -->
-          <div class="card card_section_results">
+          <div class="card">
             <img src="<%=require('./images/results6.png').default%>" alt="" class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
-              <time class="card__date card__date_section_results">2 августа, 2019</time>
+              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
               <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
                 национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
@@ -130,7 +146,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="content__button content__button_section_results">Показать еще</button>
+        <button type="submit" class="content__button results__button">Показать еще</button>
       </section>
 
       <!-- секция автор -->
@@ -153,15 +169,15 @@
       <footer class="footer content__wrapper">
         <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
         <nav class="footer__nav">
-          <a href="./index.html" class="footer__nav-item footer__nav-item_type_pages">Главная</a>
-          <a href="./about.html" class="footer__nav-item footer__nav-item_type_pages">О проекте</a>
-          <a href="https://praktikum.yandex.ru/" class="footer__nav-item footer__nav-item_type_pages">Яндекс.Практикум</a>
+          <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
+          <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
+          <a target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
         </nav>
         <div class="footer__social">
-          <a href="https://github.com/" class="footer__nav-item footer__nav-item_type_icon">
+          <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
             <img src="<%=require('./images/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
           </a>
-          <a href="https://www.facebook.com/" class="footer__nav-item footer__nav-item_type_icon">
+          <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
             <img src="<%=require('./images/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
           </a>
         </div>

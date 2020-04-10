@@ -7,8 +7,16 @@
   line-height: 1.375;
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 425px) {
   .footer__copyright {
+    width: 60%;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 675px) {
+  .footer__copyright {
+    width: 50%;
     order: 1;
   }
 }

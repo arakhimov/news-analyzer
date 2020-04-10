@@ -4,3 +4,11 @@
 .content__link_page_news-analyzer.content__link_theme_dark:visited {
   color: #000;
 }
+
+.content__link_theme_dark:hover {
+  color: #000;
+}
+
+/* .content__link.content_link_theme_dark:hover {
+  color: #000;
+} */

@@ -1,7 +1,6 @@
 .content__title_section_technologies {
   width: 344px;
   padding-top: 5%;
-  /* border: 1px solid red; */
   margin-right: 7%;
 }
 @media screen and (max-width: 424px) {

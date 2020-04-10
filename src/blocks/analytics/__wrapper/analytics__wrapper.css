@@ -5,6 +5,6 @@
   grid-template-areas: 
     "month  amount"
     ".      scale-up"
-    "days    range"
+    "days   range"
     ".      scale-down";
 }

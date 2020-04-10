@@ -5,10 +5,17 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: './src/index.js',
+    about: './src/js/about/index.js',
+    analytics: './src/js/analytics/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
+  },
+  resolve: {
+    extensions: ['.js', '.ts']
   },
   module: {
     rules: [
@@ -34,11 +41,11 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/, // шрифты
         loader: 'file-loader?name=./fonts/[name].[ext]'
-    }
+      }
     ]
   },
   plugins: [ 
-    new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
@@ -50,17 +57,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true
+      // }
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/about.html',
-      filename: 'about.html'
+      filename: 'about.html',
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true
+      // }
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/analytics.html',
-      filename: 'analytics.html'
+      filename: 'analytics.html',
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true
+      // }
     }),
     new WebpackMd5Hash()
   ]

@@ -1,4 +1,4 @@
-.content__button_section_search {
+.search__button {
   position: absolute;
   top: 0;
   right: 0;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .content__button_section_search {
+  .search__button {
     width: 100%;
     position: static;
     margin-bottom: 16px;
@@ -18,7 +18,15 @@
 }
 
 @media screen and (min-width: 576px) and (max-width: 1024px) {
-  .content__button_section_search {
+  .search__button {
     width: 160px;
   }
+}
+
+.search__button:hover, .search__button:focus {
+  background-color: #347eff;
+}
+
+.search__button:active {
+  background-color: #2a65cc;
 }

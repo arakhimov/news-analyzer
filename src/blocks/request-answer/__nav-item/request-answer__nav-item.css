@@ -1,0 +1,3 @@
+.request-answer__nav-item:not(:last-of-type) {
+  margin-right: 8px;
+}

@@ -6,8 +6,8 @@
     <meta name="description" content="Сервис для анализа происходящих в мире событий">
     <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
     <meta name="author" content="Артем Рахимов">
-    <link rel="stylesheet" href="./pages/analytics.css">
-    <link rel="icon" href="./images/favicon.png">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.analytics.css %>">
+    <link rel="icon" href="<%=require('./images/favicon.png').default%>">
     <title>News Analyzer</title>
   </head>
   <body>
@@ -16,13 +16,13 @@
       <header class="header header_theme_dark">
         <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
         <div class="content__header content__wrapper">
-          <a href="./analytics.html" lang="en" class="content__link content__link_page_news-analyzer content__link_theme_dark">NewsAnalyzer</a>
+          <a href="./index.html" lang="en" class="content__link content__link_news-analyzer content__link_theme_dark">NewsAnalyzer</a>
           <ul class="header__nav">
             <li class="header__nav-item">
-              <a href="./index.html" class="content__link content__link_page_main">Главная</a>
+              <a href="./index.html" class="content__link content__link_page_about">Главная</a>
             </li>
             <li class="header__nav-item">
-              <a href="./about.html" class="content__link content__link_page_main">О проекте</a>
+              <a href="./about.html" class="content__link content__link_page_about">О проекте</a>
             </li>
           </ul>
         </div>
@@ -31,8 +31,15 @@
 
       <!-- секция request-answer -->
       <section class="request-answer">
-        <h3 class="request-answer__subtitle content__wrapper">Главная / Аналитика</h3>
-        <h2 class="content__title content__wrapper">Вы спросили: &laquo;Путешествия&raquo;</h2>
+        <ul class="request-answer__nav content__wrapper">
+          <li class="request-answer__nav-item">
+            <a href="./index.html" class="content__link content__link_theme_dark content__link_section_request-answer">Главная</a>
+          </li>
+          <li class="request-answer__nav-item">
+            <a href="./analytics.html" class="content__link content__link_section_request-answer">/ Аналитика</a>
+          </li>
+        </ul>
+        <h2 class="content__title content__title_section_request-answer content__wrapper">Вы спросили: &laquo;Путешествия&raquo;</h2>
         <p class="content__paragraph content__paragraph_section_request-answer content__wrapper">Новостей за неделю: 
           <span class="content__paragraph content__paragraph_accent">34 324</span>
         </p>
@@ -43,11 +50,11 @@
 
       <!-- секция analytics -->
       <section class="analytics">
-        <h2 class="content__title content__title_section_analytics content__wrapper">Аналитика по дням</h2>
+        <h3 class="content__subtitle content__wrapper">Аналитика по дням</h3>
         <div class="analytics__wrapper content__wrapper">
           <!-- заголовок -->
-          <time class="analytics__header-item">дата (август)</time>
-          <time class="analytics__header-item">кол-во упоминаний</time>
+          <span class="analytics__header-item">дата (август)</span>
+          <span class="analytics__header-item">кол-во упоминаний</span>
           <!-- шкала -->
           <div class="analytics__scale">
             <span class="analytics__scale-item">0</span>
@@ -58,20 +65,21 @@
           </div>
           <div class="analytics__day-wrapper">
             <!-- понедельник -->
-            <time class="analytics__day">19,пн</time>
+            <time datetime="2020-03-19" class="analytics__day">19,пн</time>
             <!-- вторник -->
-            <time class="analytics__day">20,вт</time>
+            <time datetime="2020-03-20" class="analytics__day">20,вт</time>
             <!-- среда -->
-            <time class="analytics__day">21,ср</time>
+            <time datetime="2020-03-21" class="analytics__day">21,ср</time>
             <!-- четверг -->
-            <time class="analytics__day">22,чт</time>
+            <time datetime="2020-03-22" class="analytics__day">22,чт</time>
             <!-- пятница -->
-            <time class="analytics__day">23,пт</time>
+            <time datetime="2020-03-23" class="analytics__day">23,пт</time>
             <!-- суббота -->
-            <time class="analytics__day">24,сб</time>
+            <time datetime="2020-03-24" class="analytics__day">24,сб</time>
             <!-- воскресенье -->
-            <time class="analytics__day">25,вс</time>
+            <time datetime="2020-03-25" class="analytics__day">25,вс</time>
           </div>
+          <!-- диапазоны -->
           <div class="analytics__range-wrapper">
             <!-- понедельник -->
             <span class="analytics__range">15</span>
@@ -103,19 +111,22 @@
       <footer class="footer content__wrapper">
         <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
         <nav class="footer__nav">
-          <a href="./index.html" class="footer__nav-item footer__nav-item_type_pages">Главная</a>
-          <a href="./about.html" class="footer__nav-item footer__nav-item_type_pages">О проекте</a>
-          <a href="https://praktikum.yandex.ru/" class="footer__nav-item footer__nav-item_type_pages">Яндекс.Практикум</a>
+          <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
+          <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
+          <a  target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
         </nav>
         <div class="footer__social">
-          <a href="./index.html" class="footer__nav-item footer__nav-item_type_icon">
-            <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
+          <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
+            <img src="<%=require('./images/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
           </a>
-          <a href="./about.html" class="footer__nav-item footer__nav-item_type_icon">
-            <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
+          <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
+            <img src="<%=require('./images/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
           </a>
         </div>
       </footer>
-    </dic>
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.chunks.analytics.entry %>"></script>
+
   </body>
 </html>

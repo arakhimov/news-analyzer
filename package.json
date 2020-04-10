@@ -1,7 +1,7 @@
 {
   "name": "news-analyzer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A package to assembly of a multi-page website",
   "main": "./src/index.js",
   "scripts": {
     "build": "rimraf dist && webpack --mode production",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1"
+    "core-js": "^3.4.1",
+    "flickity": "^2.2.1"
   }
 }

@@ -1,10 +1,11 @@
 @import url('./__slider/github__slider.css');
+@import url('./__link/github__link.css');
+@import url('./__title/github__title.css');
 
 .github {
   background-color: #f5f6f7;
   padding-top: 72px;
   padding-bottom: 72px;
-  /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 575px) {

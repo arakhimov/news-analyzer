@@ -1,3 +1,6 @@
+@import url('./__nav/request-answer__nav.css');
+@import url('./__nav-item/request-answer__nav-item.css');
+
 .request-answer {
   padding-top: 40px;
   padding-bottom: 80px;
