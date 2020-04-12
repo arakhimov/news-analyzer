@@ -6,7 +6,7 @@
     <meta name="description" content="Сервис для анализа происходящих в мире событий">
     <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
     <meta name="author" content="Артем Рахимов">
-    <link rel="stylesheet" href="analytics.e444a1c47fb2636e1e54.css">
+    <link rel="stylesheet" href="styles/analytics.838c50cdec3b2bf99db2.css">
     <link rel="icon" href="./images/favicon.png">
     <title>News Analyzer</title>
   </head>
@@ -111,22 +111,36 @@
       <footer class="footer content__wrapper">
         <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
         <nav class="footer__nav">
-          <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
-          <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
-          <a  target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
+          <!-- страницы -->
+          <ul class="footer__nav-list footer__nav-list_type_pages">
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
+            </li>
+          </ul>
         </nav>
-        <div class="footer__social">
-          <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
-            <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
-          </a>
-          <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
-            <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
-          </a>
-        </div>
+        <!-- социальные сети -->
+        <ul class="footer__nav-list footer__nav-list_type_icon">
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="./images/github-icon.png" alt="github icon" class="footer__social-icon">
+            </a>
+          </li>
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="./images/facebook-icon.png" alt="facebook icon" class="footer__social-icon">
+            </a>
+          </li>
+        </ul>
       </footer>
     </div>
 
-    <script src="analytics.e9597935c9e90713946d.js"></script>
+    <script src="js/analytics.e9597935c9e90713946d.js"></script>
 
   </body>
 </html>
