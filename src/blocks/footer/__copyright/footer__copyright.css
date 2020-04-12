@@ -14,9 +14,9 @@
   }
 }
 
-@media screen and (min-width: 426px) and (max-width: 675px) {
+@media screen and (min-width: 426px) and (max-width: 690px) {
   .footer__copyright {
-    width: 50%;
+    width: 54%;
     order: 1;
   }
 }

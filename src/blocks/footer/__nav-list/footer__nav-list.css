@@ -1,0 +1,9 @@
+@import url('./_type/footer__nav-list_type_pages.css');
+
+.footer__nav-list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}

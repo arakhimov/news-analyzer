@@ -12,10 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
-  },
-  resolve: {
-    extensions: ['.js', '.ts']
+    filename: 'js/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -29,23 +26,40 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] // все CSS обрабатываются css-loader и postcss-loader
       },
       {
-        test: /\.(png|jpe?g|gif|ico|svg)$/, // изображения
-        use: [
-          'file-loader?name=./images/[name].[ext]',
-          {
-            loader: 'image-webpack-loader',
-            options: {}
-          },
-        ]
+        test: /\.(png|jpe?g|gif|ico|svg)$/, // изображения css
+        include: /background/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
+          publicPath: '../images',
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico|svg)$/, // изображения html
+        include: /regular/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
+          publicPath: './images',
+        }
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/, // шрифты
-        loader: 'file-loader?name=./fonts/[name].[ext]'
+        loader: 'file-loader',
+        options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts',
+            publicPath: '../fonts',
+        }
       }
     ]
   },
   plugins: [ 
-    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash].css',
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),

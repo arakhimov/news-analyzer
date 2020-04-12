@@ -12,13 +12,28 @@
   line-height: 1.375;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 320px) {
   .search__input {
-    margin-bottom: 8%;
+    max-width: calc(100vw - 32px);
+    margin-bottom: 4%;
+    height: 56px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 321px) and (max-width: 575px) {
+  .search__input {
+    margin-bottom: 8%;
+    height: 56px;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width: 720px) {
+  .search__input {
+    height: 48px;
+  }
+}
+
+@media screen and (min-width:721px) and (max-width: 1124px) {
   .search__input {
     height: 56px;
   }

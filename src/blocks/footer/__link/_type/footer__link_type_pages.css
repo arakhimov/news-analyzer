@@ -5,9 +5,3 @@
 .footer__link_type_pages:not(:last-of-type) {
   margin-right: 40px;
 }
-
-@media screen and (max-width: 575px) {
-  .footer__link_type_pages {
-    line-height: 2.65;
-  }
-}

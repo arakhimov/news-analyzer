@@ -1,3 +1,8 @@
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 575px) {
   .footer__nav {
     display: flex;

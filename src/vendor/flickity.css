@@ -31,12 +31,12 @@ https://flickity.metafizzy.co
 }
 
 .flickity-enabled.is-draggable .flickity-viewport {
-  cursor: url('../images/pointer.png'), pointer;
+  cursor: url('../images/background/pointer.png'), pointer;
   
 }
 
 .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-  cursor: url('../images/pointer.png'), pointer;
+  cursor: url('../images/background/pointer.png'), pointer;
 }
 
 /* ---- flickity-button ---- */
@@ -51,7 +51,7 @@ https://flickity.metafizzy.co
 
 .flickity-button:hover {
   box-shadow: 0 0 0 2px #19F;
-  cursor: url('../images/pointer.png'), pointer;
+  cursor: url('../images/background/pointer.png'), pointer;
 }
 
 .flickity-button:focus {
@@ -65,7 +65,7 @@ https://flickity.metafizzy.co
 
 .flickity-button:disabled {
   opacity: 0.3;
-  cursor: url('../images/pointer.png'), pointer;
+  cursor: url('../images/background/pointer.png'), pointer;
   pointer-events: none;
 }
 
@@ -146,7 +146,7 @@ https://flickity.metafizzy.co
   background: #333;
   border-radius: 50%;
   opacity: .25;
-  cursor: url('../images/pointer.png'), pointer;
+  cursor: url('../images/background/pointer.png'), pointer;
 }
 
 .flickity-page-dots .dot.is-selected {

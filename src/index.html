@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
     <meta name="author" content="Артем Рахимов">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-    <link rel="icon" href="<%=require('./images/favicon.png').default%>">
+    <link rel="icon" href="<%=require('./images/regular/favicon.png').default%>">
     <title>News Analyzer</title>
   </head>
   <body>
@@ -44,10 +44,11 @@
         </div>
         <picture class="search__picture">
           <source class="search__image" media="(max-width: 575px)"
-            srcset="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-320.png').default%>">
+            srcset="<%=require('./images/regular/georgia-de-lotz--UsJoNxLaNo-unsplash-320.png').default%>">
           <source class="search__image" media="(min-width: 1024px)"
-            srcset="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png').default%>">
-          <img class="search__image" src="<%=require('./images/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png').default%>" alt="anylytics">
+            srcset="<%=require('./images/regular/georgia-de-lotz--UsJoNxLaNo-unsplash-1440.png').default%>">
+          <img class="search__image" src="<%=require('./images/regular/georgia-de-lotz--UsJoNxLaNo-unsplash-768.png').default%>"
+            alt="anylytics diagramm - аналитика">
         </picture>
       </section>
 
@@ -59,7 +60,7 @@
 
       <!-- секция not-found -->
       <section class="not-found not-found_active">
-        <img src="<%=require('./images/not-found_v1.png').default%>" alt="icon not found" class="not-found__image">
+        <img src="<%=require('./images/regular/not-found_v1.png').default%>" alt="icon not found - иконка ничего не нейдено" class="not-found__image">
         <h2 class="content__subtitle">Ничего не найдено</h2>
         <p class="content__explanation-text content__explanation-text_section_not-found">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
@@ -69,13 +70,14 @@
         <div class="content__header content__header_section_results content__wrapper">
           <h2 class="content__title">Результаты поиска</h2>
           <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;
-            <img src="<%=require('./images/more-icon.png').default%>" alt="" class="content__icon-more">
+            <img src="<%=require('./images/regular/more-icon.png').default%>" alt="icon more - иконка больше" class="content__icon-more">
           </a>
         </div>
         <div class="results__cardlist content__wrapper">
           <!-- первая карточка -->
           <div class="card">
-            <img src="<%=require('./images/results1.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results1.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -87,7 +89,8 @@
           </div>
           <!-- вторая карточка -->
           <div class="card">
-            <img src="<%=require('./images/results2.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results2.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -99,7 +102,8 @@
           </div>
           <!-- третья карточка -->
           <div class="card">
-            <img src="<%=require('./images/results3.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results3.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -111,7 +115,8 @@
           </div>
           <!-- четвертая карточка -->
           <div class="card">
-            <img src="<%=require('./images/results4.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results4.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -123,7 +128,8 @@
           </div>
           <!-- пятая карточка -->
           <div class="card">
-            <img src="<%=require('./images/results5.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results5.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -135,7 +141,8 @@
           </div>
           <!-- шестая карточка -->
           <div class="card">
-            <img src="<%=require('./images/results6.png').default%>" alt="" class="card__image card__image_section_results">
+            <img src="<%=require('./images/regular/results6.png').default%>" alt="photo national park - национальный парк"
+              class="card__image card__image_section_results">
             <div class="card__wrapper card__wrapper_section_results">
               <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
               <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
@@ -169,18 +176,32 @@
       <footer class="footer content__wrapper">
         <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
         <nav class="footer__nav">
-          <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
-          <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
-          <a target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
+          <!-- страницы -->
+          <ul class="footer__nav-list footer__nav-list_type_pages">
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
+            </li>
+          </ul>
         </nav>
-        <div class="footer__social">
-          <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
-            <img src="<%=require('./images/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
-          </a>
-          <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
-            <img src="<%=require('./images/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
-          </a>
-        </div>
+        <!-- социальные сети -->
+        <ul class="footer__nav-list footer__nav-list_type_icon">
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="<%=require('./images/regular/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
+            </a>
+          </li>
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="<%=require('./images/regular/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
+            </a>
+          </li>
+        </ul>
       </footer>
     </div>
 
