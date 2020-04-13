@@ -1,0 +1,6 @@
+.analytics__range-wrapper {
+  grid-area: range;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

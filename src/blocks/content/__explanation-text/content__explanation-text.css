@@ -1,0 +1,20 @@
+@import url('./_section/content__explanation-text_section_not-found.css');
+
+.content__explanation-text {
+  width: 320px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  color: #b6bcbf;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .content__explanation-text {
+    width: calc(100vw - 32px);
+  }
+}

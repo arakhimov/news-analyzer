@@ -1,0 +1,21 @@
+@import url('./_section/content__title_section_technologies.css');
+@import url('./_section/content__title_section_request-anwer.css');
+
+.content__title {
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #1a1b22;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content__title {
+    margin-bottom: 16px;
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+}

@@ -1,0 +1,18 @@
+.content__title_section_technologies {
+  width: 344px;
+  padding-top: 5%;
+  margin-right: 7%;
+}
+@media screen and (max-width: 424px) {
+  .content__title_section_technologies {
+    width: calc(100% - 32px);
+    padding-top: 11%;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 575px) {
+  .content__title_section_technologies {
+    width: calc(100% - 80px);
+    padding-top: 11%;
+  }
+}

@@ -1,0 +1,24 @@
+@import url('./content__link_news-analyzer.css');
+@import url('./_theme/content__link_theme_white.css');
+@import url('./_theme/content__link_theme_dark.css');
+@import url('./_page/content__link_page_main.css');
+@import url('./_page/content__link_page_about.css');
+
+.content__link {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: #b6bcbf;
+  cursor: url('../../../images/background/pointer.png'), pointer;
+  transition: .1s linear;
+}
+
+@media screen and (max-width: 425px) {
+  .content__link {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

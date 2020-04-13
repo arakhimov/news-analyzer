@@ -1,0 +1,30 @@
+.content__button {
+  height: 64px;
+  border-radius: 80px;
+  cursor: url('../../../images/background/pointer.png'), pointer;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.375;
+  border: 0;
+}
+
+@media screen and (max-width: 575px) {
+  .content__button {
+    height: 56px;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width: 720px) {
+  .search__button {
+    height: 48px;
+  }
+}
+
+@media screen and (min-width:721px) and (max-width: 1124px) {
+  .search__button {
+    height: 56px;
+  }
+}

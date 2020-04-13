@@ -1,0 +1,10 @@
+@import url('./__card-wrapper/technologies__card-wrapper.css');
+@import url('./__icon/technologies__icon.css');
+@import url('./__card/technologies__card.css');
+@import url('./__name/technologies__name.css');
+@import url('./__wrapper/technologies__wrapper.css');
+
+.technologies {
+  min-height: 334px;
+  background-color: #f5f6f7;
+}

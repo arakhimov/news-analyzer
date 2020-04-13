@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сервис для анализа происходящих в мире событий">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
+    <meta name="author" content="Артем Рахимов">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
+    <link rel="icon" href="<%=require('./images/regular/favicon.png').default%>">
+    <title>News Analyzer</title>
+  </head>
+  <body>
+    <div class="root">
+      <!-- секция header -->
+      <header class="header header_theme_dark">
+        <!-- контейнер для ограничения контента и создания горизонтальной линии на всю длину header -->
+        <div class="content__header content__wrapper">
+          <a href="./index.html" lang="en" class="content__link content__link_news-analyzer content__link_theme_dark">NewsAnalyzer</a>
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <a href="./index.html" class="content__link content__link_page_about">Главная</a>
+            </li>
+            <li class="header__nav-item  header__nav-item_theme_dark">
+              <a href="./about.html" class="content__link content__link_theme_dark content__link_page_about">О проекте</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <!-- конец header -->
+
+      <!-- секция for-customers -->
+      <section class="for-customers content__wrapper">
+        <h2 class="content__title">Клиентам</h2>
+        <p class="content__paragraph">Этот сайт - дипломный проект студента Яндекс.Практикума. Его цель - показать, чему
+          научился студент, и какими технологиями владеет.
+        </p>
+        <p class="content__paragraph">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. 
+          Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненныъ по другим
+          методологиям. Также сайт проще и дешевле поддерживать.
+        </p>
+        <p class="content__paragraph">Карточки с новостями приходят с сервера и обрабатыватся асинхронно. То есть сайт 
+          продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.
+        </p>
+        <p class="content__paragraph">При создании проекта была использована сборка технологией Webpack. Это современный
+          подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых 
+          браузерах. Даже если посететели - пользователи старых операционных систем у них не будет проблем с отображением.
+          А значит, потенциальная аудитория возрастает.
+        </p>
+        <p class="content__paragraph">Проект был проверен экспертами Яндекс.Практикума. И если вашему бизнесу нужен сайт,
+          мы рекомендуем обратиться к этому студенту.
+        </p>
+      </section>
+
+      <!-- секция technologies -->
+      <section class="technologies">
+        <div class="technologies__wrapper content__wrapper">
+          <h2 class="content__title content__title_section_technologies">Используемые технологии</h2>
+          <div class="technologies__card-wrapper">
+            <div class="technologies__card">
+              <span class="technologies__name">HTML</span>
+              <img src="<%=require('./images/regular/html-icon.png').default%>" alt="html icon" class="technologies__icon">
+            </div>
+            <div class="technologies__card">
+              <span class="technologies__name">CSS</span>
+              <img src="<%=require('./images/regular/css-icon.png').default%>" alt="css icon" class="technologies__icon">
+            </div>
+            <div class="technologies__card">
+              <span class="technologies__name">Java Script</span>
+              <img src="<%=require('./images/regular/js-icon.png').default%>" alt="javascript icon" class="technologies__icon">
+            </div>
+            <div class="technologies__card">
+              <span class="technologies__name">Webpack</span>
+              <img src="<%=require('./images/regular/webpack-icon.png').default%>" alt="webpack icon" class="technologies__icon">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- секция автор -->
+      <section class="author content__wrapper">
+        <div class="author__image-wrapper">
+          <div class="author__photo"></div>
+        </div>
+        <div class="author__column">
+          <h2 class="content__title">Об авторе</h2>
+          <p class="content__paragraph">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, 
+            чем вы занимаетесь, какими технологиями разработки владеете.
+          </p>
+          <p class="content__paragraph">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, 
+            и чем можете помочь потенциальным заказчикам.
+          </p>
+        </div>
+      </section>
+
+      <!-- секция GitHub -->
+      <section class="github">
+        <div class="content__header content__wrapper">
+          <h2 class="content__title github__title">История коммитов из GitHub</h2>
+          <a target="_blank" href="https://github.com/" class="content__link content__link_theme_dark github__link github__link_position_header">
+            Открыть в GitHub&emsp;
+            <img src="<%=require('./images/regular/more-icon.png').default%>" alt="icon more - иконка больше" class="content__icon-more">
+          </a>
+        </div>
+        <div class="github__slider flickity__carousel">
+          <div class="flickity__banner flickity__banner_position_left"></div>
+          <!-- первая карточка -->
+          <div class="card card_section_github flickity__carousel-cell">
+            <time datetime="2019-08-14" class="card__date card__date_section_github">14 августа, 2019</time>
+            <div class="card__wrapper card__wrapper_section_github">
+              <img src="<%=require('./images/regular/github-card2.png').default%>" alt="github commit" class="card__image card__image_section_github">
+              <h3 class="card__title card__title_section_github">Мария Фёдорова <span class="card__email">mariiifed@yandex.ru</span></h3>
+            </div>
+            <p class="card__text">You can instal this plagin directly from NetBeans Plagin Portal: in NetBeans
+               <span class="card__text-accent">Tools &gt; Plagins &gt; Available plugins</span> and find and install
+               Emmet Plagin.
+            </p>
+          </div>
+          <!-- вторая карточка -->
+          <div class="card card_section_github flickity__carousel-cell">
+            <time datetime="2019-08-14" class="card__date card__date_section_github">14 августа, 2019</time>
+            <div class="card__wrapper card__wrapper_section_github">
+              <img src="<%=require('./images/regular/github-card1.png').default%>" alt="github commit" class="card__image card__image_section_github">
+              <h3 class="card__title card__title_section_github">Антон Долинин <span class="card__email">anton@yandex.ru</span></h3>
+            </div>
+            <p class="card__text">Emmet (formerly Zen Coding) is a web-developers toolkit that can greatly improve your 
+              HTML & CSS workflow.
+            </p>
+          </div>
+          <!-- третья карточка -->
+          <div class="card card_section_github flickity__carousel-cell">
+            <time datetime="2019-08-14" class="card__date card__date_section_github">14 августа, 2019</time>
+            <div class="card__wrapper card__wrapper_section_github">
+              <img src="<%=require('./images/regular/github-card2.png').default%>" alt="github commit" class="card__image card__image_section_github">
+              <h3 class="card__title card__title_section_github">Мария Фёдорова <span class="card__email">mariiifed@yandex.ru</span></h3>
+            </div>
+            <p class="card__text">You can instal this plagin directly from NetBeans Plagin Portal: in NetBeans
+               <span class="card__text-accent">Tools &gt; Plagins &gt; Available plugins</span> and find and install
+               Emmet Plagin.
+            </p>
+          </div>
+          <!-- четвертая карточка -->
+          <div class="card card_section_github flickity__carousel-cell">
+            <time datetime="2019-08-14" class="card__date card__date_section_github">14 августа, 2019</time>
+            <div class="card__wrapper card__wrapper_section_github">
+              <img src="<%=require('./images/regular/github-card3.png').default%>" alt="github commit" class="card__image card__image_section_github">
+              <h3 class="card__title card__title_section_github">Инга Иванова <span class="card__email">ingaiva@yandex.ru</span></h3>
+            </div>
+            <p class="card__text">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce 
+              output depending on what you type in the abb...
+            </p>
+          </div>
+          <!-- пятая карточка -->
+          <div class="card card_section_github flickity__carousel-cell">
+            <time datetime="2019-08-14" class="card__date card__date_section_github">14 августа, 2019</time>
+            <div class="card__wrapper card__wrapper_section_github">
+              <img src="<%=require('./images/regular/github-card1.png').default%>" alt="github commit" class="card__image card__image_section_github">
+              <h3 class="card__title card__title_section_github">Антон Долинин <span class="card__email">anton@yandex.ru</span></h3>
+            </div>
+            <p class="card__text">Emmet (formerly Zen Coding) is a web-developers toolkit that can greatly improve your 
+              HTML & CSS workflow.
+            </p>
+          </div>
+          <div class="flickity__banner flickity__banner_position_right"></div>
+        </div>
+        <a target="_blank" href="https://github.com/" 
+          class="content__link content__link_theme_dark github__link github__link_position_end">Открыть в GitHub</a>
+      </section>
+      
+      <!--секция footer -->
+      <footer class="footer content__wrapper">
+        <span class="footer__copyright">&copy;2019&emsp;NewsAnalyzer</span>
+        <nav class="footer__nav">
+          <!-- страницы -->
+          <ul class="footer__nav-list footer__nav-list_type_pages">
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./index.html" class="content__link footer__link footer__link_type_pages">Главная</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a href="./about.html" class="content__link footer__link footer__link_type_pages">О проекте</a>
+            </li>
+            <li class="footer__nav-list-item footer__nav-list-item_type_pages">
+              <a target="_blank" href="https://praktikum.yandex.ru/" class="content__link footer__link footer__link_type_pages">Яндекс.Практикум</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- социальные сети -->
+        <ul class="footer__nav-list footer__nav-list_type_icon">
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://github.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="<%=require('./images/regular/github-icon.png').default%>" alt="github icon" class="footer__social-icon">
+            </a>
+          </li>
+          <li class="footer__nav-list-item footer__nav-list-item_type_icon">
+            <a target="_blank" href="https://www.facebook.com/" class="content__link footer__link footer__link_type_icon">
+              <img src="<%=require('./images/regular/facebook-icon.png').default%>" alt="facebook icon" class="footer__social-icon">
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script type="module" src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+
+  </body>
+</html>

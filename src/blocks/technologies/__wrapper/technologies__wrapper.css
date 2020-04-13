@@ -1,0 +1,11 @@
+.technologies__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+  .technologies__wrapper {
+    flex-wrap: wrap;
+  }
+}

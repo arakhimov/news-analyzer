@@ -1,0 +1,22 @@
+.footer__copyright {
+  color: #b6bcbf;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.375;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__copyright {
+    width: 60%;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 690px) {
+  .footer__copyright {
+    width: 54%;
+    order: 1;
+  }
+}

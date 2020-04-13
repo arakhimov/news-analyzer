@@ -1,0 +1,29 @@
+.analytics__scale {
+  padding-top: 16px;
+  padding-bottom: 8px;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: .75rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: #b6bcbf;
+}
+
+.analytics__scale:first-of-type {
+  grid-area: scale-up;
+}
+
+.analytics__scale:last-of-type {
+  grid-area: scale-down;
+}
+
+@media screen and (max-width: 575px) {
+  .analytics__scale {
+    display: none;
+  }
+}

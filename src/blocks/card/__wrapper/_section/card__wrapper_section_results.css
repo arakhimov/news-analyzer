@@ -1,0 +1,11 @@
+.card__wrapper_section_results {
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 425px) {
+  .card__wrapper_section_results {
+    padding: 16px;
+  }
+}

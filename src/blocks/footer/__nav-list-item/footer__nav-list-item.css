@@ -1,0 +1,6 @@
+@import url('./_type/footer__nav-list-item_type_icon.css');
+@import url('./_type/footer__nav-list-item_type_pages.css');
+
+.footer__nav-list-item {
+  list-style-type: none;
+}

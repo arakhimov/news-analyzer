@@ -1,0 +1,7 @@
+@import url('./_active/search__explanation-text_active.css');
+
+.search__explanation-text {
+  padding-left: 24px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}

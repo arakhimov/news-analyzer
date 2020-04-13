@@ -1,0 +1,21 @@
+@import url('./__nav/request-answer__nav.css');
+@import url('./__nav-item/request-answer__nav-item.css');
+
+.request-answer {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 575px) {
+  .request-answer {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .request-answer {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}

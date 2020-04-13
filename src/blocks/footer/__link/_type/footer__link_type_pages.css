@@ -1,0 +1,7 @@
+.footer__link_type_pages:link, .footer__link_type_pages:visited {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.footer__link_type_pages:not(:last-of-type) {
+  margin-right: 40px;
+}

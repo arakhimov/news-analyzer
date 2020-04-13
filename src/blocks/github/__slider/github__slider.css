@@ -1,0 +1,15 @@
+.github__slider {
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 575px) {
+  .github__slider {
+    padding-left: 8px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1023px) {
+  .github__slider {
+    padding-left: 40px;
+  }
+}

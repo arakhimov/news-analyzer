@@ -1,0 +1,3 @@
+.footer__nav-list-item_type_icon:not(:last-of-type) {
+  margin-right: 28px;
+}

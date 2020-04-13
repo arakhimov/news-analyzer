@@ -1,0 +1,13 @@
+.analytics__day-wrapper {
+  min-height: 568px;
+  grid-area: days;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 575px) {
+  .analytics__day-wrapper {
+    min-height: 100vw;
+  }
+}

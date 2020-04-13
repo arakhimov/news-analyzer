@@ -1,0 +1,19 @@
+.github__link_position_end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 32px);
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 56px;
+  border: 1px solid #1a1b22;
+  border-radius: 28px;
+  /* margin: 0; */
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 525px) {
+  .github__link_position_end {
+    display: none;
+  }
+}

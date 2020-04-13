@@ -1,0 +1,29 @@
+@import url('./__nav/header__nav.css');
+@import url('./__nav-item/header__nav-item.css');
+@import url('./_theme/header_theme_white.css');
+@import url('./_theme/header_theme_dark.css');
+
+.header {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 80px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 575px) {
+  .header {
+    min-height: 56px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .header {
+    min-height: 64px;
+  }
+}
+
+
