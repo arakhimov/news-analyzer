@@ -1,4 +1,5 @@
 @import url('./__circle-preloader/loading__circle-preloader.css');
+@import url('../content/content.css');
 @import url('./_active/loading_active.css');
 
 .loading {

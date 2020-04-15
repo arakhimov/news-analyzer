@@ -35,8 +35,8 @@
             <p class="search__subtitle">Введите в поиске любую тему и узнайте, насколько популярной она была во многих новостях
               за прошедшую неделю.
             </p>
-            <form class="search__form">
-              <input type="text" name="newsText" class="search__input" placeholder="Введите тему новости" required>
+            <form class="search__form" name="search" autocomplete="off">
+              <input type="text" name="newsText" class="search__input" placeholder="Введите тему новости">
               <p class="search__explanation-text"></p>
               <button type="submit" class="content__button search__button">Искать</button>
             </form>
@@ -53,107 +53,32 @@
       </section>
 
       <!-- секция loading -->
-      <section class="loading loading_active">
+      <section class="loading">
         <i class="loading__circle-preloader"></i>
         <h2 class="content__explanation-text">Идет поиск новостей...</h2>
       </section>
 
       <!-- секция not-found -->
-      <section class="not-found not-found_active">
+      <section class="not-found">
         <img src="<%=require('./images/regular/not-found_v1.png').default%>" alt="icon not found - иконка ничего не нейдено" class="not-found__image">
         <h2 class="content__subtitle">Ничего не найдено</h2>
         <p class="content__explanation-text content__explanation-text_section_not-found">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
 
       <!-- секция results -->
-      <section class="results results_active">
-        <div class="content__header content__header_section_results content__wrapper">
+      <section class="results">
+        <p class="content__explanation-text results__not-found">&laquo;Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер
+          недоступен. Подождите немного и попробуйте еще раз.&raquo;
+        </p>
+        <div class="content__header results__header content__wrapper">
           <h2 class="content__title">Результаты поиска</h2>
           <a href="./analytics.html" class="content__link content__link_theme_dark">Посмотреть аналитику&emsp;
             <img src="<%=require('./images/regular/more-icon.png').default%>" alt="icon more - иконка больше" class="content__icon-more">
           </a>
         </div>
         <div class="results__cardlist content__wrapper">
-          <!-- первая карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results1.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">ЛЕНТА.РУ</span>
-            </div>
-          </div>
-          <!-- вторая карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results2.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">медуза</span>
-            </div>
-          </div>
-          <!-- третья карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results3.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">риа</span>
-            </div>
-          </div>
-          <!-- четвертая карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results4.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">дзен</span>
-            </div>
-          </div>
-          <!-- пятая карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results5.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">афиша</span>
-            </div>
-          </div>
-          <!-- шестая карточка -->
-          <div class="card">
-            <img src="<%=require('./images/regular/results6.png').default%>" alt="photo national park - национальный парк"
-              class="card__image card__image_section_results">
-            <div class="card__wrapper card__wrapper_section_results">
-              <time datetime="2019-08-02" class="card__date card__date_section_results">2 августа, 2019</time>
-              <h3 class="card__title card__title_section_results">Национальное достояние - парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: 100 лет назад здесь начала складываться система
-                национальных парков - охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <span class="card__source">медиазона</span>
-            </div>
-          </div>
         </div>
-        <button type="submit" class="content__button results__button">Показать еще</button>
+        <button type="button" class="content__button results__button">Показать еще</button>
       </section>
 
       <!-- секция автор -->

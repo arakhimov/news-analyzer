@@ -1,5 +1,7 @@
+@import url('./_active/results__cardlist_active.css');
+
 .results__cardlist {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(auto-fill, calc((100% - 32px)/3));
   grid-gap: 16px;
   margin-bottom: 64px;

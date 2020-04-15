@@ -1,0 +1,9 @@
+.search__explanation-text_active {
+  font-size: .75rem;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: .8rem;
+  line-height: 1.375;
+}
