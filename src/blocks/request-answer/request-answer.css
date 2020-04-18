@@ -1,5 +1,6 @@
 @import url('./__nav/request-answer__nav.css');
 @import url('./__nav-item/request-answer__nav-item.css');
+@import url('./__amount/request-answer__amount.css');
 
 .request-answer {
   padding-top: 40px;

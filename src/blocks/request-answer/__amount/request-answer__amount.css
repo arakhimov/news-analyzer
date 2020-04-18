@@ -1,0 +1,5 @@
+@import url('./_content/request-answer__amount_content.css');
+
+.request-answer__amount {
+  font-weight: bold;
+}

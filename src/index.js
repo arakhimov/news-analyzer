@@ -1,21 +1,27 @@
 // стили
-import "./pages/index.css";
+import './pages/index.css';
 
 // классы
-import NewsCard from "./js/components/NewsCard.js";
+import NewsCard from './js/components/NewsCard.js';
 import NewsCardList from './js/components/NewsCardList.js';
 import NewsApi from './js/modules/NewsApi.js';
-import FormValidator from "./js/components/FormValidator.js";
+import FormValidator from './js/components/FormValidator.js';
+import DataStorage from './js/modules/DataStorage.js';
+// функции
+import {translateDate} from './js/utils/translateDate.js';
 
 (function() {
-  // форма поиска
-  const searchForm = document.forms.search;
-  const searchInput = searchForm.elements.newsText;
-  const submitButton = document.querySelector('.search__button');
 
-  // контейнер для новостей
-  const newsCardList = document.querySelector('.results__cardlist');
-
+  // элементы DOM
+  const elementsDOM = {
+    searchForm: document.forms.search,
+    searchInput: document.forms.search.elements.newsText,
+    preloader: document.querySelector('.loading'),
+    results: document.querySelector('.results'),
+    notFound: document.querySelector('.not-found'),
+    newsCardList: document.querySelector('.results__cardlist'),
+    submitButton: document.querySelector('.search__button')
+  };
 
   // поясняющие шаблоны
   const wordTemplate = {
@@ -24,14 +30,7 @@ import FormValidator from "./js/components/FormValidator.js";
     text: 'Должно содержать текст'
   };
 
-  // изменение формата даты
-  const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-  const regexpDate = [
-    /((\d{4})-(\d{2})-(\d{2}))/,
-    /(\d{4})-([а-я]{3,8})-(\d{2})/
-  ];
-
-  // проверка содержания текта - может содержать  от 2 до 30 символов - латинские буквы и цифры, кириллицу и пробелы,
+  // проверка содержания текта - может содержать  от 2 до 30 символов - латинские буквы и цифры, кириллицу, тире и пробелы,
   // но должно содержать хоть одну букву
   const regExp = /(?=^[\w\sа-яёА-ЯЁ-]{2,30}$)(?=.*[a-zA-Zа-яёА-ЯЁ])/;
 
@@ -53,72 +52,92 @@ import FormValidator from "./js/components/FormValidator.js";
   const validation = new FormValidator(wordTemplate, regExp);
 
   // экземпляр NewsCard
-  const newsCard = new NewsCard(months, regexpDate);
+  const newsCard = new NewsCard(translateDate);
   const buttonShowMore = document.querySelector('.results__button');
 
   // экземпляр NewsCardList
-  const newsContainer = new NewsCardList(newsCardList, newsCard);
-  
-  // добавление новостей
-  function addNews() {
-    newsContainer.render(JSON.parse(localStorage.newsArray).slice(+localStorage.newsIndex, +localStorage.newsIndex + 3));
-    localStorage.newsIndex = +localStorage.newsIndex + 3;
-  }
+  const newsContainer = new NewsCardList(elementsDOM.newsCardList, newsCard);
+
+  // экземпляр DataStorage
+  const dataStorage = new DataStorage();
 
   // получение и сохранение новостей
   function getNews(event) {
     event.preventDefault();
-    if (submitButton.classList.contains('search__button_active')) {
-      // preloader
-      const preloader = document.querySelector('.loading');
-      // секция результаты поиска
-      const results = document.querySelector('.results'); 
-      // секция ничего не найдено
-      const notFound = document.querySelector('.not-found');
-      preloader.classList.add('loading_active');
-      newsApi.getNews(searchInput.value, date, results, newsContainer, notFound, preloader) //TODO
+    // удаляем слушатели ранее использованных карточек
+    for (let image of document.querySelectorAll('.card__image_section_results')) {
+      image.removeEventListener('error', errorImageListener);
+    }
+    // удаляем старые карточки
+    if (elementsDOM.newsCardList.children.length > 0) {
+      elementsDOM.newsCardList.innerHTML = '';
+    }
+    // валидация
+    if (elementsDOM.submitButton.classList.contains('search__button_active')) {
+      elementsDOM.preloader.classList.add('loading_active');
+      // сохранение значения запроса в LocalStorage
+      dataStorage.setRequest(elementsDOM.searchInput.value);
+      // получение данных из localStorage
+      newsApi.getNews(elementsDOM, date, newsContainer, dataStorage) //TODO
         .then(res => {
           if (res.articles.length === 0) {
-            results.classList.remove('results_active');
-            notFound.classList.add('not-found_active');
+            elementsDOM.results.classList.remove('results_active');
+            elementsDOM.notFound.classList.add('not-found_active');
           } else {
-            results.classList.add('results_active');
-            notFound.classList.remove('not-found_active');
-            results.querySelector('.results__header').classList.add('results__header_state_active');
-            results.querySelector('.results__cardlist').classList.add('results__cardlist_active');
-            results.querySelector('.results__button').classList.add('results__button_active');
+            elementsDOM.results.classList.add('results_active');
+            elementsDOM.notFound.classList.remove('not-found_active');
+            elementsDOM.results.querySelector('.results__header').classList.add('results__header_state_active');
+            elementsDOM.results.querySelector('.results__cardlist').classList.add('results__cardlist_active');
+            elementsDOM.results.querySelector('.results__button').classList.add('results__button_active');
             // сохраняем в локальном хранилище
-            localStorage.newsArray = JSON.stringify(res.articles);
-            localStorage.setItem('newsIndex', 0);
-            addNews();
+            dataStorage.setData(res);
+            // добавление карточек
+            dataStorage.setIndex({value: 0});
+            addNews({});
           }
         })
         .catch(error => {
           console.log(error);
-          results.classList.add('results_active');
-          results.querySelector('.results__not-found').classList.add('results__not-found_active');
-          results.querySelector('.results__header').classList.add('results__header_state_disabled');
-          results.querySelector('.results__cardlist').classList.remove('results__cardlist_active');
-          results.querySelector('.results__button').classList.remove('results__button_active');
+          elementsDOM.results.classList.add('results_active');
+          elementsDOM.results.querySelector('.results__not-found').classList.add('results__not-found_active');
+          elementsDOM.results.querySelector('.results__header').classList.add('results__header_state_disabled');
+          elementsDOM.results.querySelector('.results__cardlist').classList.remove('results__cardlist_active');
+          elementsDOM.results.querySelector('.results__button').classList.remove('results__button_active');
         })
-        .finally(() => preloader.classList.remove('loading_active'));
-      searchForm.reset(); 
+        .finally(() => elementsDOM.preloader.classList.remove('loading_active'));
+        elementsDOM.searchForm.reset(); 
     }
   }
-  
-  // слушатели
-  // валидация формы
-  searchInput.addEventListener('input', () => validation.submitButtonState(searchInput, submitButton));
-  searchInput.addEventListener('click', () => validation.submitButtonState(searchInput, submitButton));
-  searchInput.addEventListener('focus', () => validation.submitButtonState(searchInput, submitButton));
-  // получение новостей
-  searchForm.addEventListener('submit', getNews);
+
   // добавление новостей
-  buttonShowMore.addEventListener('click', () => {
-    addNews();
-    if (+localStorage.newsIndex > 99) {
+  function addNews({amount = 3, index = 3}) {
+    newsContainer.render(dataStorage.getCards(amount));
+    if (dataStorage.getIndex() > 99) {
       buttonShowMore.classList.remove('results__button_active');
     }
-  });
+    // на последние добавленные карточки вешаем слушатель на загрузку изображения и если ошибка удаляем карточку и
+    // добавляем еще одну
+    let cards = Array.from(document.querySelectorAll('.card__image_section_results'));
+    for(let i = cards.length -1; i >= cards.length - amount; i--) {
+      cards[i].addEventListener('error', errorImageListener);
+    }
+    dataStorage.setIndex({value: index});
+  }
+
+  //ошибка загрузки изображения
+  function errorImageListener(event) {
+    elementsDOM.newsCardList.removeChild(event.currentTarget.parentElement);
+    addNews({amount: 1, index: 1});
+  }
+  
+  // валидация формы
+  elementsDOM.searchInput.addEventListener('input', () => validation.submitButtonState(elementsDOM));
+  elementsDOM.searchInput.addEventListener('click', () => validation.submitButtonState(elementsDOM));
+  elementsDOM.searchInput.addEventListener('focus', () => validation.submitButtonState(elementsDOM));
+  // получение новостей
+  elementsDOM.searchForm.addEventListener('submit', getNews);
+  // добавление новостей
+  buttonShowMore.addEventListener('click', () => addNews({}));
+
 
 } ());

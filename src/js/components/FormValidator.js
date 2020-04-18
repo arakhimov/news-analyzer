@@ -31,11 +31,11 @@ export default class FormValidator {
     return true;
   }
 
-  submitButtonState(input, submitButton) {
-    if (this.checkInputValidity(input)) {
-      submitButton.classList.add('search__button_active');
+  submitButtonState(elementsDOM) {
+    if (this.checkInputValidity(elementsDOM.searchInput)) {
+      elementsDOM.submitButton.classList.add('search__button_active');
     } else {
-      submitButton.classList.remove('search__button_active');
+      elementsDOM.submitButton.classList.remove('search__button_active');
     }
   }
 }

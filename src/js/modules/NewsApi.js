@@ -9,8 +9,8 @@ export default class NewsApi {
     this.request = null;
   }
 
-  getNews(input, date) {
-    return fetch(`${this.baseURL}${this.endPoint}?q=${input}&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&to=${date.getFullYear()}-${date.getMonth()}-${date.getDate() - 7}&pageSize=${this.pageSize}&sortBy=publishedAt&apiKey=${this.key}`)
+  getNews(elementsDOM, date) {
+    return fetch(`${this.baseURL}${this.endPoint}?q=${elementsDOM.searchInput.value}&from=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}&to=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() - 7}&pageSize=${this.pageSize}&apiKey=${this.key}`)
       .then(res => {
         if (res.ok) {
           return res.json();
