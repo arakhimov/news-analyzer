@@ -6,7 +6,7 @@
     <meta name="description" content="Сервис для анализа происходящих в мире событий">
     <meta name="keywords" content="HTML5, CSS3, JavaScript ES2017, Git, Webpack">
     <meta name="author" content="Артем Рахимов">
-    <link rel="stylesheet" href="styles/analytics.838c50cdec3b2bf99db2.css">
+    <link rel="stylesheet" href="styles/analytics.bfa504b04c2278f6691a.css">
     <link rel="icon" href="./images/favicon.png">
     <title>News Analyzer</title>
   </head>
@@ -39,12 +39,12 @@
             <a href="./analytics.html" class="content__link content__link_section_request-answer">/ Аналитика</a>
           </li>
         </ul>
-        <h2 class="content__title content__title_section_request-answer content__wrapper">Вы спросили: &laquo;Путешествия&raquo;</h2>
+        <h2 class="content__title content__title_section_request-answer content__wrapper">Вы спросили:</h2>
         <p class="content__paragraph content__paragraph_section_request-answer content__wrapper">Новостей за неделю: 
-          <span class="content__paragraph content__paragraph_accent">34 324</span>
+          <span class="content__paragraph request-answer__amount request-answer__amount_content_text"></span>
         </p>
         <p class="content__paragraph content__paragraph_section_request-answer content__wrapper">Упоминаний в заголовках: 
-          <span class="content__paragraph content__paragraph_accent">235</span>
+          <span class="content__paragraph request-answer__amount request-answer__amount_content_headers"></span>
         </p>
       </section>
 
@@ -64,37 +64,27 @@
             <span class="analytics__scale-item">100</span>
           </div>
           <div class="analytics__day-wrapper">
-            <!-- понедельник -->
-            <time datetime="2020-03-19" class="analytics__day">19,пн</time>
-            <!-- вторник -->
-            <time datetime="2020-03-20" class="analytics__day">20,вт</time>
-            <!-- среда -->
-            <time datetime="2020-03-21" class="analytics__day">21,ср</time>
-            <!-- четверг -->
-            <time datetime="2020-03-22" class="analytics__day">22,чт</time>
-            <!-- пятница -->
-            <time datetime="2020-03-23" class="analytics__day">23,пт</time>
-            <!-- суббота -->
-            <time datetime="2020-03-24" class="analytics__day">24,сб</time>
-            <!-- воскресенье -->
-            <time datetime="2020-03-25" class="analytics__day">25,вс</time>
+            <!-- день недели добавляю через js т.к. без установленной даты в атрибуте datetime в валидаторе W3C ошибка -->
+            <template class="analytics__day-template">
+              <time datetime="" class="analytics__day"></time>
+            </template>
           </div>
           <!-- диапазоны -->
           <div class="analytics__range-wrapper">
             <!-- понедельник -->
-            <span class="analytics__range">15</span>
+            <span class="analytics__range"></span>
             <!-- вторник -->
-            <span class="analytics__range">18</span>
+            <span class="analytics__range"></span>
             <!-- среда -->
-            <span class="analytics__range">11</span>
+            <span class="analytics__range"></span>
             <!-- четверг -->
-            <span class="analytics__range">39</span>
+            <span class="analytics__range"></span>
             <!-- пятница -->
-            <span class="analytics__range">45</span>
+            <span class="analytics__range"></span>
             <!-- суббота -->
-            <span class="analytics__range">73</span>
+            <span class="analytics__range"></span>
             <!-- воскресенье -->
-            <span class="analytics__range">34</span>
+            <span class="analytics__range"></span>
           </div>
           <!-- шкала -->
           <div class="analytics__scale">
@@ -140,7 +130,7 @@
       </footer>
     </div>
 
-    <script src="js/analytics.e9597935c9e90713946d.js"></script>
+    <script type="module" src="js/analytics.5da22fb885e753b4c110.js"></script>
 
   </body>
 </html>
