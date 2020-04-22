@@ -31,7 +31,7 @@ import {regexp} from './js/constants/constants.js';
 
   // экземпляр NewsApi
   const newsApi = new NewsApi ({
-    baseURL: 'http://newsapi.org',
+    baseURL: 'https://newsapi.org',
     endPoint: '/v2/everything',
     pageSize: '100',
     key: AUTHORIZATION_KEY
