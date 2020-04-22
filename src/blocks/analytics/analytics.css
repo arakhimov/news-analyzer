@@ -6,6 +6,7 @@
 @import url('./__wrapper/analytics__wrapper.css');
 @import url('./__day-wrapper/analytics__day-wrapper.css');
 @import url('./__range-wrapper/analytics__range-wrapper.css');
+@import url('./__day-template/analytics__day-template.css');
 
 .analytics {
   padding-top: 80px;

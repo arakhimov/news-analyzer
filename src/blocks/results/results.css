@@ -1,7 +1,7 @@
 @import url('./__cardlist/results__cardlist.css');
 @import url('./__button/results__button.css');
 @import url('./__header/results__header.css');
-@import url('./__not-found/results__not-found.css');
+@import url('./__error/results__error.css');
 @import url('./_active/results_active.css');
 
 .results {

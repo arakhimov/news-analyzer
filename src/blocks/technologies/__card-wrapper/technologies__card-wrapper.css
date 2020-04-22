@@ -6,7 +6,7 @@
   padding-top: 93px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .technologies__card-wrapper {
     flex-wrap: wrap;
     padding-top: 40px;

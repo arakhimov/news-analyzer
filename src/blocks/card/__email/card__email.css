@@ -6,4 +6,6 @@
   line-height: 1.55;
   color: #1a1b22;
   margin: 0;
+  display: inline-block;
+  width: 80%;
 }

@@ -67,7 +67,7 @@
 
       <!-- секция results -->
       <section class="results">
-        <p class="content__explanation-text results__not-found">&laquo;Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер
+        <p class="content__explanation-text results__error">&laquo;Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер
           недоступен. Подождите немного и попробуйте еще раз.&raquo;
         </p>
         <div class="content__header results__header content__wrapper">
@@ -130,7 +130,7 @@
       </footer>
     </div>
 
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 
   </body>
 </html>

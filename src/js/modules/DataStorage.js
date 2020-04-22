@@ -1,4 +1,5 @@
 export default class DataStorage {
+
   constructor() {
     if(!localStorage.news) {
       localStorage.setItem('news', null);
@@ -10,10 +11,6 @@ export default class DataStorage {
   // запись в хранилище
   setData(newsData) {
     localStorage.news = JSON.stringify(newsData);
-    // for (let news of newsData.articles) {
-      
-    // }
-    // console.log(JSON.parse(localStorage.news));
   }
 
   //получение количества резулататов
@@ -21,7 +18,7 @@ export default class DataStorage {
     return JSON.parse(localStorage.news);
   }
 
-  // получение трех карточек
+  // получение карточек
   getCards(amount) {
     return JSON.parse(localStorage.news).articles.slice(+localStorage.newsCounter, +localStorage.newsCounter + amount);
   }

@@ -1,6 +1,7 @@
 @import url('./__slider/github__slider.css');
 @import url('./__link/github__link.css');
 @import url('./__title/github__title.css');
+@import url('./__error/github__error.css');
 
 .github {
   background-color: #f5f6f7;

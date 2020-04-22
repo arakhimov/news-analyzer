@@ -64,20 +64,10 @@
             <span class="analytics__scale-item">100</span>
           </div>
           <div class="analytics__day-wrapper">
-            <!-- понедельник -->
-            <time datetime="2020-03-19" class="analytics__day"></time>
-            <!-- вторник -->
-            <time datetime="2020-03-20" class="analytics__day"></time>
-            <!-- среда -->
-            <time datetime="2020-03-21" class="analytics__day"></time>
-            <!-- четверг -->
-            <time datetime="2020-03-22" class="analytics__day"></time>
-            <!-- пятница -->
-            <time datetime="2020-03-23" class="analytics__day"></time>
-            <!-- суббота -->
-            <time datetime="2020-03-24" class="analytics__day"></time>
-            <!-- воскресенье -->
-            <time datetime="2020-03-25" class="analytics__day"></time>
+            <!-- день недели добавляю через js т.к. без установленной даты в атрибуте datetime в валидаторе W3C ошибка -->
+            <template class="analytics__day-template">
+              <time datetime="" class="analytics__day"></time>
+            </template>
           </div>
           <!-- диапазоны -->
           <div class="analytics__range-wrapper">
@@ -140,7 +130,7 @@
       </footer>
     </div>
 
-    <script src="<%= htmlWebpackPlugin.files.chunks.analytics.entry %>"></script>
+    <script type="module" src="<%= htmlWebpackPlugin.files.chunks.analytics.entry %>"></script>
 
   </body>
 </html>

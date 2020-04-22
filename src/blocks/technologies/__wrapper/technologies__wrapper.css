@@ -4,7 +4,7 @@
   align-items: flex-start;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   .technologies__wrapper {
     flex-wrap: wrap;
   }
