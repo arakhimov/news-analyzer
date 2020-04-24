@@ -16,7 +16,6 @@ export default class Statistics {
       // общее количество
       this._amount.common = this._amount.common + (news.description.match(regexp) || []).length 
         + (news.title.match(regexp) || []).length;
-        // console.log(this._amount.common);
       // запишем в объект в качестве ключей даты новостей, а в качестве значений их количество
       const date = news.publishedAt.match(/\d{4}-\d{2}-(\d{2})/)[1];
       if(!this._amount[date]) {
