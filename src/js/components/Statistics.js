@@ -8,13 +8,13 @@ export default class Statistics {
 
   // подсчет общего количества упоминаний и количества упоминаний по дням недели
   getMentionAmount() {
-    let regexp = new RegExp(this.request, 'ig');
+    const regexp = new RegExp(this.request, 'ig');
     for(let news of this.newsData.articles) {
       // общее количество
       this._amount.common = this._amount.common + (news.description.match(regexp) || []).length 
         + (news.title.match(regexp) || []).length;
       // запишем в объект в качестве ключей даты новостей, а в качестве значений их количество
-      let date = news.publishedAt.match(/\d{4}-\d{2}-(\d{2})/)[1];
+      const date = news.publishedAt.match(/\d{4}-\d{2}-(\d{2})/)[1];
       if(!this._amount[date]) {
         this._amount[date] = (news.description.match(regexp) || []).length + (news.title.match(regexp) || []).length;
       } 

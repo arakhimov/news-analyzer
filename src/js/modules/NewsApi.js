@@ -5,11 +5,13 @@ export default class NewsApi {
     this._endPoint = parameters.endPoint;
     this._pageSize = parameters.pageSize;
     this._key = parameters.key;
+    this._from = `${parameters.from.getFullYear()}-${parameters.from.getMonth() + 1}-${parameters.from.getDate()}`;
+    this._to = `${parameters.to.getFullYear()}-${parameters.to.getMonth() + 1}-${parameters.to.getDate()}`;
   }
 
   // получение новостей
   getNews(input, date) {
-    return fetch(`${this._baseURL}${this._endPoint}?q=${input.value}&from=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}&to=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() - 7}&pageSize=${this._pageSize}&apiKey=${this._key}`)
+    return fetch(`${this._baseURL}${this._endPoint}?q=${input.value}&from${this._from}=&to${this._to}=&pageSize=${this._pageSize}&apiKey=${this._key}`)
       .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`));
   }
 

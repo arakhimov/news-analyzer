@@ -1,14 +1,21 @@
 export default class SearchInput {
+
   constructor(input, options) {
     this.input = input;
     this.elementsDOM = options.elementsDOM;
+    this.elementsDOM.resultsChild = {
+      error: options.elementsDOM.results.querySelector('.results__error'),
+      header: options.elementsDOM.results.querySelector('.results__header'),
+      cardlist: options.elementsDOM.results.querySelector('.results__cardlist'),
+      button: options.elementsDOM.results.querySelector('.results__button')
+    };
     this.components = options.components;
     this.storage = options.components.dataStorage;
+    this.request = options.components.dataStorage.getRequest();
     this.api = options.components.newsApi;
-    this.date = options.components.date;
     this.cardList = options.components.newsContainer;
-    this._messages = options.wordTemplate;
-    this._regexp = options.regexp.text;
+    this._messages = options.const.wordTemplate;
+    this._regexp = options.const.regexp.text;
     this._isValid = false;
   }
 
@@ -23,15 +30,21 @@ export default class SearchInput {
     else {
       this.elementsDOM.results.classList.add('results_active');
       this.elementsDOM.notFound.classList.remove('not-found_active');
-      this.elementsDOM.results.querySelector('.results__error').classList.remove('results__error_active');
-      this.elementsDOM.results.querySelector('.results__header').classList.add('results__header_state_active');
-      this.elementsDOM.results.querySelector('.results__header').classList.remove('results__header_state_disabled');
-      this.elementsDOM.results.querySelector('.results__cardlist').classList.add('results__cardlist_active');
-      this.elementsDOM.results.querySelector('.results__button').classList.add('results__button_active');
-      // сохраняем в локальном хранилище
-      this.storage.setData(res);
+      this.elementsDOM.resultsChild.error.classList.remove('results__error_active');
+      this.elementsDOM.resultsChild.header.classList.add('results__header_state_active');
+      this.elementsDOM.resultsChild.header.classList.remove('results__header_state_disabled');
+      this.elementsDOM.resultsChild.cardlist.classList.add('results__cardlist_active');
+      this.elementsDOM.resultsChild.button.classList.add('results__button_active');
+      // сохранение значения запроса в LocalStorage
+      this.storage.setRequest(this.input.value);
+      // сохраняем новости в локальном хранилище
+      this.storage.setNewsData(res);
+      // сохраняем карточки в с списке карточек
+      this.cardList.setNewsData(res.articles);
+      // сохраняем значение запроса
+      this.request = this.input.value;
       // сбрасываем индекс
-      this.storage.setIndex({value: 0});
+      this.cardList.setIndex({value: 0});
       // добавление карточек
       this.addNews({});
     }
@@ -41,11 +54,11 @@ export default class SearchInput {
   _requestError(error) {
     console.log(error);
     this.elementsDOM.results.classList.add('results_active');
-    this.elementsDOM.results.querySelector('.results__error').classList.add('results__error_active');
-    this.elementsDOM.results.querySelector('.results__header').classList.add('results__header_state_disabled');
-    this.elementsDOM.results.querySelector('.results__header').classList.remove('results__header_state_active');
-    this.elementsDOM.results.querySelector('.results__cardlist').classList.remove('results__cardlist_active');
-    this.elementsDOM.results.querySelector('.results__button').classList.remove('results__button_active');
+    this.elementsDOM.resultsChild.error.classList.add('results__error_active');
+    this.elementsDOM.resultsChild.header.classList.add('results__header_state_disabled');
+    this.elementsDOM.resultsChild.header.classList.remove('results__header_state_active');
+    this.elementsDOM.resultsChild.cardlist.classList.remove('results__cardlist_active');
+    this.elementsDOM.resultsChild.button.classList.remove('results__button_active');
   }
 
   // валидация текстового поля
@@ -77,8 +90,8 @@ export default class SearchInput {
   }
 
   // статус submit и _isValid в зависимости от того, пройдена ли валидация текстового поля
-  validate() {
-    if (this._checkInputValidity(this.input)) {
+  validate(event) {
+    if (this._checkInputValidity(event.target)) {
       this.elementsDOM.submitButton.classList.add('search__button_active');
       this._isValid = true;
     }
@@ -89,58 +102,52 @@ export default class SearchInput {
   }
 
   // добавление новостей на страницу
-  addNews({amount = 3, index = 3}) {
+  addNews({amount = 3, index = 3, buttonShowMore = this.elementsDOM.buttonShowMore}) {
     // отрисовываем карточки
-    this.cardList.render(this.storage.getCards(amount));
+    this.cardList.render(this.cardList._separatePartNews(amount));
     // увеличиваем индекс количества отображенных карточек
-    this.storage.setIndex({value: index});
-    // скрываем кнопку показать еще если карточек больше 100 или больше нет карточек
-    if (this.storage.getIndex() >= this.storage.getNewsData().articles.length) {
-      this.elementsDOM.buttonShowMore.classList.remove('results__button_active');
+    this.cardList.setIndex({value: index});
+    // скрываем кнопку показать еще если больше нет карточек
+    if (this.cardList.getIndex() >= this.cardList.getNewsData().length) {
+      buttonShowMore.classList.remove('results__button_active');
     }
     this.elementsDOM.submitButton.classList.remove('search__button_active');
     // добавляем слушатель загрузки изображения на добавленные карточки и удаляем карточки без изображений
-    let _imageDelete = this._errorImageLoading.bind(this);
+    const _hundleImageDelete = this._errorImageLoading.bind(this);
     // последние добавленные карточки
-    let cards = Array.from(this.elementsDOM.newsCardList.querySelectorAll('.card__image_section_results')).slice(-amount);
+    const cards = Array.from(this.elementsDOM.newsCardList.querySelectorAll('.card__image_section_results')).slice(-amount);
     cards.forEach(card => {
       // добавляем слушатель
-      card.addEventListener('error', _imageDelete);
+      card.addEventListener('error', _hundleImageDelete);
       // удаляем слушатель
-      setTimeout(() => card.removeEventListener('error', _imageDelete), 10000);
+      setTimeout(() => card.removeEventListener('error', _hundleImageDelete), 10000);
     });
   }
 
   // получение новостей
-  getNews() {
+  getNews(event) {
     // валидация
-    if (this._isValid && this.elementsDOM.submitButton.classList.contains('search__button_active')) {
+    // при передаче event вместо использования глобальных переменных приходится лишний раз осуществлять поиск по DOM-дереву, но
+    // я посчитал это рациональнее, т.к. это делает метод более невисимым - например, при передаче ему другой формы
+    const submit = event.target.querySelector('.search__button');
+    const input = event.target.querySelector('.search__input');
+    if (this._isValid && submit.classList.contains('search__button_active')) {
       // удаляем старые новости
-      this._deleteNews();
+      this.cardList.deleteNews();
       // прелоадер
       this.elementsDOM.preloader.classList.add('loading_active');
       // input и submit делаем неактивными на время загрузки
-      this.input.disabled = true;
-      this.elementsDOM.submitButton.disabled = true;
-      // сохранение значения запроса в LocalStorage
-      this.storage.setRequest(this.input.value);
+      input.disabled = true;
+      submit.disabled = true;
       // получение данных из localStorage
-      this.api.getNews(this.input, this.date) 
+      this.api.getNews(this.input) 
         .then(res => this._requestSuccess(res))
         .catch(error => this._requestError(error))
         .finally( () => {
         this.elementsDOM.preloader.classList.remove('loading_active');
-        this.input.disabled = false;
-        this.elementsDOM.submitButton.disabled = false;
+        input.disabled = false;
+        submit.disabled = false;
       });
-    }
-  }
-
-  // удаление новостей
-  _deleteNews() {
-    if (this.elementsDOM.newsCardList.children.length > 0) {
-      let cards = Array.from(this.elementsDOM.newsCardList.children);
-      cards.forEach(card => card.remove());
     }
   }
 
