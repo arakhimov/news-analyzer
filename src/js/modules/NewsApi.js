@@ -10,8 +10,8 @@ export default class NewsApi {
   }
 
   // получение новостей
-  getNews(input, date) {
-    return fetch(`${this._baseURL}${this._endPoint}?q=${input.value}&from${this._from}=&to${this._to}=&pageSize=${this._pageSize}&apiKey=${this._key}`)
+  getNews(input) {
+    return fetch(`${this._baseURL}${this._endPoint}?q=${input.value}&from=${this._from}&to=${this._to}&pageSize=${this._pageSize}&apiKey=${this._key}`)
       .then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`));
   }
 
