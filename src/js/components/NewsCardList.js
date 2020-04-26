@@ -1,9 +1,9 @@
 export default class NewsCardList {
 
-  constructor(container, card, newsCards) {
+  constructor(container, card, dataStorage) {
     this.container = container;
     this.card = card;
-    this._newsCards = newsCards;
+    this._newsCards = dataStorage.getNewsData() ? dataStorage.getNewsData().articles : null;
     this._cardIndex = 0;
   }
 
@@ -46,7 +46,7 @@ export default class NewsCardList {
   // удаление новостей
   deleteNews() {
     if (this.container.children.length > 0) {
-      let cards = Array.from(this.container.children);
+      const cards = Array.from(this.container.children);
       cards.forEach(card => card.remove());
     }
   }

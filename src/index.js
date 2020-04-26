@@ -48,7 +48,7 @@ const newsCard = new NewsCard(translateDate, sanitizeHTML);
 const dataStorage = new DataStorage();
 
 // экземпляр NewsCardList
-const newsContainer = new NewsCardList(elementsDOM.newsCardList, newsCard, dataStorage.getNewsData().articles);
+const newsContainer = new NewsCardList(elementsDOM.newsCardList, newsCard, dataStorage); //TODO
 
  // экземпляр SearchInput
 const searchInput = new SearchInput(elementsDOM.searchInput, {
