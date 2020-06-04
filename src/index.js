@@ -33,7 +33,7 @@ const weekAgo = new Date((today.getTime() - msecondsOfWeek));
 
  // экземпляр NewsApi
 const newsApi = new NewsApi ({
-  baseURL: 'https://newsapi.org',
+  baseURL: 'https://praktikum.tk/news',
   endPoint: '/v2/everything',
   pageSize: '100',
   key: AUTHORIZATION_KEY,

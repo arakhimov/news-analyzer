@@ -1,6 +1,9 @@
 @import url('./__column/authot__column.css');
 @import url('./__image-wrapper/author__image-wrapper.css');
 @import url('./__photo/author__photo.css');
+@import url('./__nav/author__nav.css');
+@import url('./__nav-item/author__nav-item.css');
+@import url('./__link/author__link.css');
 
 .author {
   display: flex;

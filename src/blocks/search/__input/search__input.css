@@ -10,6 +10,7 @@
   font-weight: normal;
   font-size: 1.125rem;
   line-height: 1.375;
+  border: none;
 }
 
 @media screen and (max-width: 320px) {

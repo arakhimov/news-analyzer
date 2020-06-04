@@ -1,0 +1,5 @@
+.author__link:link, .author__link:visited {
+  color: steelblue;
+  text-decoration: none;
+  font-size: .9rem;
+}

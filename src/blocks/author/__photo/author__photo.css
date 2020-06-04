@@ -2,8 +2,9 @@
   display: block;
   width: 100%;
   padding-bottom: 100%;
-  background-image: url('../../../images/background/author.png');
-  background-size: contain;
+  background-image: url('../../../images/background/author.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: top right;
   border-radius: 50%;
 }
